@@ -1,0 +1,28 @@
+<agm-map 
+  [latitude]="crud.lat"
+  [longitude]="crud.lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="true"
+   >
+
+  <agm-marker 
+    
+      
+      [latitude]="crud.lat"
+      [longitude]="crud.lng">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    
+  </agm-marker>
+  
+  <agm-circle [latitude]="crud.lat + 0.3" [longitude]="crud.lng" 
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="true"
+      [editable]="true">
+  </agm-circle>
+
+</agm-map>

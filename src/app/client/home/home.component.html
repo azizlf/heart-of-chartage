@@ -1,0 +1,877 @@
+<!-- Pre Loader -->
+
+  <!-- END SCROLL TOP BUTTON -->
+  
+  
+  <!-- End header section -->
+  
+  <!-- Start menu section -->
+ 
+  <!-- End menu section -->
+  
+  <!-- Start slider  -->
+ 
+  <section id="aa-slider"  style="margin-top:0px !important">
+    <div class="aa-slider-area"> 
+      <!-- Top slider -->
+      <div class="aa-top-slider">
+        <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="https://drehomes.com/wp-content/uploads/maha-townhouses.jpg" alt="img">
+          <!-- Top slider content -->
+          
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->
+        <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="https://drehomes.com/wp-content/uploads/farm-gardens-the-valley.jpg" alt="img">
+          <!-- Top slider content -->
+          <div class="aa-top-slider-content">
+            <span class="aa-top-slider-catg">Duplex</span>
+            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
+            <span class="aa-top-slider-off">30% OFF</span>
+            <p class="aa-top-slider-price">$460,000</p>
+            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+          </div>
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->
+        <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="https://drehomes.com/wp-content/uploads/seascape-rashid-yachts-marina.jpg" alt="img">
+          <!-- Top slider content -->
+          
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->       
+         <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="https://drehomes.com/wp-content/uploads/damac-cavalli-couture-1.jpg" alt="img">
+          <!-- Top slider content -->
+         
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->        
+         <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="https://drehomes.com/wp-content/uploads/maha-townhouses.jpg" alt="img">
+          <!-- Top slider content -->
+          
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->
+         <!-- Top slider single slide -->
+       
+        <!-- / Top slider single slide -->
+      </div>
+    </div>
+  </section>
+  <!-- End slider  -->
+  
+  <!-- Advance Search -->
+  <section id="aa-advance-search" >
+    <div class="container" style="margin-bottom: 30px;">
+      <div class="aa-advance-search-area" style="background-color: rgb(220 220 220 / 80%);">
+        <div class="form">
+         <div class="aa-advance-search-top">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="aa-single-advance-search">
+                  <select (change)="selectRole($event)">
+                   <option value="0" selected>RENT OR BUY</option>
+                    <option value="rent">Rent</option>
+                    <option value="buy">Buy</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="aa-single-advance-search">
+                  <select >
+                   <option value="0" selected>Property Type</option>
+                    <option value="1">Vila</option>
+                    <option value="2">Apartment</option>
+                    <option value="3">Duplex</option>
+                    <option value="3">Office space</option>
+                    <option value="3">Shop</option>
+                    <option value="3">Show Room</option>
+          
+                    <option value="1">Flat</option>
+                    <option value="2">Land</option>
+                    <option value="3">Plot</option>
+                    <option value="4">Commercial</option>
+                  </select>
+                </div>
+              </div>
+             
+              <div class="col-md-2">
+                 <div class="aa-single-advance-search">
+                  <select>
+                    <option value="0" selected>Min bedrooms</option>
+                    <option value="1">Studio</option>
+                    <option value="2">1</option>
+                    <option value="3">2</option>
+                    <option value="4">3</option>
+                    <option value="4">4</option>
+                    <option value="4">5</option>
+                  </select>
+              </div>
+              </div>
+             
+            </div>
+            <div class="row"  style="margin-top:5%">
+
+              <div class="col-md-5">
+                <div class="aa-single-advance-search">
+                <input type="text" placeholder="Your min budjet $" [(ngModel)]="min">                 
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="aa-single-advance-search">
+                  <input type="text" placeholder="Your max budjet $" [(ngModel)]="max">      
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="aa-single-advance-search" (click)="chercher()">
+                  <input class="aa-search-btn" type="submit" (click)="Navigate(adv)" value="Search">
+                </div>
+              </div>
+            </div> 
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Advance Search -->
+ 
+  <section id="aa-latest-property" >
+      <div class="container" #adv>
+        <div class="aa-latest-property-area" *ngIf="testChercher">
+          <div class="aa-title">
+            <h2>Resultat Search</h2>
+            <span></span>
+                   
+          </div>
+        
+   
+          <div class="aa-latest-properties-content">
+           <div class="row" *ngIf="!crud.loadingVila">
+              
+
+              <div class="ft-ctn" *ngFor="let vila of tabVilaChercher; index as i">
+                <div class="title-box" style="background-color: red;">Vila</div>
+                <div class="cover-image">
+                  <img [src]="vila.imageProfil" />
+                </div>
+                <div class="details-ctn">
+                  <p class="item-details-ctn"><i class="fa-solid fa-sink"></i> {{vila.bath}} Baths</p>
+                  <p class="item-details-ctn"><i class="fa-solid fa-bed"></i> {{vila.bed}} Beds</p>
+                  <p class="item-details-ctn"><i class="fa-regular fa-square"></i> {{vila.surface}} SQ FT</p>
+                </div>
+                <p class="title">{{vila.title}}</p>
+                <div class="description">
+                  {{vila. stitle}} {{vila. prix}}
+                </div>
+                <div class="footer-box">
+                  <div class="price"><span>AED</span><p>{{vila.prixFinal}}</p></div>
+                  <p class="view-btn" (click)="nav2(i)"><i class="fa-regular fa-eye"></i></p>
+                </div>
+              </div>
+
+
+              <!--div class="col-md-4"  *ngFor="let vila of tabVilaChercher; index as i">
+                <article class="aa-properties-item">
+                  <a  class="aa-properties-item-img">
+                    <img [src]="vila.imageProfil" alt="img">
+                  </a>                
+                  <div class="aa-tag sold-out">
+                    Vila
+                  </div>
+                  <div class="aa-properties-item-content">
+                    <div class="aa-properties-info">
+                      <span>{{vila.room}} Rooms</span>
+                      <span>{{vila.bed}} Beds</span>
+                      <span>{{vila.bath}} Baths</span>
+                      <span>{{vila.surface}} SQ FT</span>
+                    </div>
+                    <div class="aa-properties-about">
+                      <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                      <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                    </div>
+                    <div class="aa-properties-detial">
+                      <span class="aa-price">
+                        {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">  
+                      </span>
+                      <a  class="aa-secondary-btn" (click)="nav2(i)">View Details</a>
+                    </div>
+                  </div>
+                </article>
+              
+              </div-->
+            </div>
+          
+          </div>
+          <!--2-->
+          <div class="aa-latest-properties-content">
+            
+             <div class="row">
+
+              <div class="ft-ctn" *ngFor="let vila of tabApprChercher ;index as i">
+                <div class="title-box" style="background-color: rgb(32, 206, 179);">Apartement</div>
+                <div class="cover-image">
+                  <img [src]="vila.imageProfil" />
+                </div>
+                <div class="details-ctn">
+                  <p class="item-details-ctn"><i class="fa-solid fa-sink"></i> {{vila.bath}} Baths</p>
+                  <p class="item-details-ctn"><i class="fa-solid fa-bed"></i> {{vila.bed}} Beds</p>
+                  <p class="item-details-ctn"><i class="fa-regular fa-square"></i> {{vila.surface}} SQ FT</p>
+                </div>
+                <p class="title">{{vila.title}}</p>
+                <div class="description">
+                  {{vila. stitle}} {{vila. prix}}
+                </div>
+                <div class="footer-box">
+                  <div class="price"><span>AED</span><p>{{vila.prixFinal}}</p></div>
+                  <p class="view-btn" (click)="nav2(i)"><i class="fa-regular fa-eye"></i></p>
+                </div>
+              </div>
+             <!--div class="col-md-4" *ngFor="let vila of tabApprChercher ;index as i">
+               <article class="aa-properties-item">
+                 <a class="aa-properties-item-img">
+                   <img [src]="vila.imageProfil" alt="img">
+                 </a>
+                 <div class="aa-tag for-rent">
+                  Apartement
+                 </div>
+                 <div class="aa-properties-item-content">
+                   <div class="aa-properties-info">
+                     <span>{{vila.room}} Room</span>
+                     <span>{{vila.bed}} Beds</span>
+                     <span>{{vila.bath}} Baths</span>
+                     <span>{{vila.surface}} SQ FT</span>
+                   </div>
+                   <div class="aa-properties-about">
+                     <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                     <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                   </div>
+                   <div class="aa-properties-detial">
+                     <span class="aa-price">
+                       {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                     </span>
+                     <a  class="aa-secondary-btn" (click)="nav3(i)">View Details</a>
+                   </div>
+                 </div>
+               </article>
+             </div-->
+            </div>
+           </div>
+          <!--fin 2-->
+          <!--3-->
+          <div class="aa-latest-properties-content">
+            
+            <div class="row">
+            <div class="col-md-4" *ngFor="let vila of tabRentChercher ;index as i">
+              <article class="aa-properties-item">
+                <a class="aa-properties-item-img">
+                  <img [src]="vila.imageProfil" alt="img">
+                </a>
+                <div class="aa-tag for-rent">
+                Rent
+                </div>
+                <div class="aa-properties-item-content">
+                  <div class="aa-properties-info">
+                    <span>{{vila.room}} Room</span>
+                    <span>{{vila.bed}} Beds</span>
+                    <span>{{vila.bath}} Baths</span>
+                    <span>{{vila.surface}} SQ FT</span>
+                  </div>
+                  <div class="aa-properties-about">
+                    <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                    <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                  </div>
+                  <div class="aa-properties-detial">
+                    <span class="aa-price">
+                      {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                    </span>
+                    <a  class="aa-secondary-btn" (click)="nav3(i)">View Details</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+           </div>
+          </div>
+          <!--fin 3-->
+        </div>
+      </div>
+    </section>
+    <!-- About us -->
+    <div class="container" #adv >
+      <div class="row" *ngIf="testChercheAv">
+        <div class="col-md-12">
+          <div class="aa-promo-banner-area">
+           
+            <div class="alert alert-success"  role="alert" style="text-align: center;">
+              <span style="text-align: center;" class="fa fa-check"></span>
+              fill out your form to find your need in 24 hours
+              
+              <a routerLink="/form" class="btn btn-outline-success active" role="button" aria-pressed="true">Form</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <section class="section">
+    <div class="aa-title" style="margin-bottom: 22px;margin-top: 22px;">
+        <h2>About</h2>
+        <span></span>   
+    </div>
+    <div class="container" style="display: flex;align-items: center;">
+        <div class="row" style="display: flex;align-items: center;">
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="first-image" style="width: 100%;text-align: center;">
+                                <img src="assets/images/logo1.png" alt="heart-of-carthage-dubai" class="image-about-logo">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <h2 style="font-family: 'Montserrat', sans-serif;">Heart of carthage dubai</h2>
+                    <span style="font-family: 'Quicksand', sans-serif;font-weight: 500;"> Heart of Carthage Real Estate is an award-winning </span>
+                    <div class="quote">
+
+                    </div>
+                    <p style="font-family: 'Quicksand', sans-serif;font-weight: 500;"> full-service boutique brokerage and advisory firm in the UAE and has been spearheading the drive to match property and people since 2018.
+                      
+                    </p>
+                 
+                    <a class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark"  href="tel:{{phone}}" role="button"><i class="fa fa-phone"></i> Call us</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </section>  
+
+
+  <div class="slider-devs">
+    <div class="ctn-slider-devs">
+      <p class="title">AWARD WINNING REAL ESTATE & BROKERAGE FIRM</p>
+      <div class="slider-images">
+        <div class="slider-ctn" id="sliderContainer">         
+        </div>
+      </div>
+      <div class="slider-dots">
+        <div class="dots" id="sliderDots">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Latest property -->
+  <section id="aa-latest-property" style="margin-top:6%;margin-bottom: 4%;">
+    <div class="container">
+      <div class="aa-latest-property-area">
+        <div class="aa-title">
+          <h2>Off-Plan</h2>
+          <span></span>   
+        </div>
+        <div class="row" style="text-align: center;margin-top: 20%; " *ngIf="crud.loadingOff">
+          <div class="col-12">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                  <span class="visually-hidden"> Loading...</span>
+                </div>
+          </div>
+      </div>
+        <div class="aa-latest-properties-content">
+         <div class="row" *ngIf="!crud.loadingOff">
+
+          <div class="off-plan" *ngFor="let off of tabOff ; index as i">
+            <img class="logo-site" src="assets/images/logoPh.png" alt="logo">
+            <div class="title-box">OFF PLAN</div>
+            <div class="cover-image">
+              <img [src]="off.imageProfil" alt="off-plan" />
+            </div>
+            <div class="stars-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="title">{{off.title}}</p>
+            <div class="description">
+              {{off.stitle}} {{off.prix}}
+            </div>
+            <div class="footer-box">
+              <div class="logo-devp"><p> {{off.dev}} </p></div>
+              <p class="view-btn" (click)="nav1(i)"><i class="fa-regular fa-eye"></i></p>
+            </div>
+          </div>
+
+
+
+          <!--div class="col-md-4" *ngFor="let off of tabOff ; index as i">
+            <article class="aa-properties-item">
+              <a  class="aa-properties-item-img" >
+                <img [src]="off.imageProfil" alt="off-plan">
+              </a>
+              <div class="aa-tag for-sale">
+                {{off.dev}}
+              </div>
+              <div class="aa-properties-item-content">
+              
+                <div class="aa-properties-about">
+                  <h3><a href="#" style="color:#C9A770">{{off.title}}</a></h3>
+                  <p>{{off.stitle}} {{off.prix}}</p>                      
+                </div>
+                <div class="aa-properties-detial">
+                 
+                  <a (click)="nav1(i)" class="aa-secondary-btn">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div-->
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- / Latest property -->
+
+
+  <section id="aa-latest-property" style="margin-top: 4%;margin-bottom: 3%;">
+    <div class="container">
+      <div class="aa-latest-property-area">
+        <div class="aa-title" id="featuredTitle">
+          <h2>FEATURED PROPERTIES</h2>
+          <span></span>
+                 
+        </div>
+        <div class="row" style="text-align: center;margin-top: 20%; " *ngIf="crud.loadingVila">
+          <div class="col-12">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                  <span class="visually-hidden"> Loading...</span>
+                </div>
+          </div>
+      </div>
+      <div class="row" style="text-align: center;margin-top: 20%; " *ngIf="crud.loadingAppr">
+        <div class="col-12">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden"> Loading...</span>
+              </div>
+        </div>
+    </div>
+ 
+        <div class="aa-latest-properties-content" style="padding: 2% 0;">
+         <div class="row" *ngIf="!crud.loadingVila">
+            
+
+            <div class="ft-ctn" *ngFor="let vila of tabVila; index as i">
+              <div class="title-box" style="background-color: red;">Vila</div>
+              <div class="cover-image">
+                <img [src]="vila.imageProfil" />
+              </div>
+              <div class="details-ctn">
+                <p class="item-details-ctn"><i class="fa-solid fa-sink"></i> {{vila.bath}} Baths</p>
+                <p class="item-details-ctn"><i class="fa-solid fa-bed"></i> {{vila.bed}} Beds</p>
+                <p class="item-details-ctn"><i class="fa-regular fa-square"></i> {{vila.surface}} SQ FT</p>
+              </div>
+              <p class="title">{{vila.title}}</p>
+              <div class="description">
+                {{vila. stitle}} {{vila. prix}}
+              </div>
+              <div class="footer-box">
+                <div class="price"><span>AED</span><p>{{vila.prixFinal}}</p></div>
+                <p class="view-btn" (click)="nav2(i)"><i class="fa-regular fa-eye"></i></p>
+              </div>
+            </div>
+
+            <!--div class="col-md-4"  *ngFor="let vila of tabVila; index as i">
+              <article class="aa-properties-item">
+                <a  class="aa-properties-item-img">
+                  <img [src]="vila.imageProfil" alt="img">
+                </a>                
+                <div class="aa-tag sold-out">
+                  Vila
+                </div>
+                <div class="aa-properties-item-content">
+                  <div class="aa-properties-info">
+                    <span>{{vila.room}} Rooms</span>
+                    <span>{{vila.bed}} Beds</span>
+                    <span>{{vila.bath}} Baths</span>
+                    <span>{{vila.surface}} SQ FT</span>
+                  </div>
+                  <div class="aa-properties-about">
+                    <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                    <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                  </div>
+                  <div class="aa-properties-detial">
+                    <span class="aa-price">
+                      {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                    </span>
+                    <a  class="aa-secondary-btn" (click)="nav2(i)">View Details</a>
+                  </div>
+                </div>
+              </article>
+            
+            </div-->
+          </div>
+        
+        </div>
+        <!--2-->
+        <div class="aa-latest-properties-content">
+          
+           <div class="row">
+
+            <div class="ft-ctn" *ngFor="let vila of tabAppr ;index as i">
+              <div class="title-box" style="background-color: rgb(32, 206, 179);">Appartment</div>
+              <div class="cover-image">
+                <img [src]="vila.imageProfil" />
+              </div>
+              <div class="details-ctn">
+                <p class="item-details-ctn"><i class="fa-solid fa-sink"></i> {{vila.bath}} Baths</p>
+                <p class="item-details-ctn"><i class="fa-solid fa-bed"></i> {{vila.bed}} Beds</p>
+                <p class="item-details-ctn"><i class="fa-regular fa-square"></i> {{vila.surface}} SQ FT</p>
+              </div>
+              <p class="title">{{vila.title}}</p>
+              <div class="description">
+                {{vila. stitle}} {{vila. prix}}
+              </div>
+              <div class="footer-box">
+                <div class="price"><span>AED</span><p>{{vila.prixFinal}}</p></div>
+                <p class="view-btn" (click)="nav2(i)"><i class="fa-regular fa-eye"></i></p>
+              </div>
+            </div>
+
+           <!--div class="col-md-4" *ngFor="let vila of tabAppr ;index as i">
+             <article class="aa-properties-item">
+               <a class="aa-properties-item-img">
+                 <img [src]="vila.imageProfil" alt="img">
+               </a>
+               <div class="aa-tag for-rent">
+                Apartement
+               </div>
+               <div class="aa-properties-item-content">
+                 <div class="aa-properties-info">
+                   <span>{{vila.room}} Room</span>
+                   <span>{{vila.bed}} Beds</span>
+                   <span>{{vila.bath}} Baths</span>
+                   <span>{{vila.surface}} SQ FT</span>
+                 </div>
+                 <div class="aa-properties-about">
+                   <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                   <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                 </div>
+                 <div class="aa-properties-detial">
+                   <span class="aa-price">
+                     {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                   </span> 
+                   <a  class="aa-secondary-btn" (click)="nav3(i)">View Details</a>
+                 </div>
+               </div>
+             </article>
+           </div-->
+          </div>
+         </div>
+        <!--fin 2-->
+      </div>
+    </div>
+  </section>
+  <section id="aa-promo-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-promo-banner-area">
+            <h3 style="font-family: 'Quicksand', sans-serif;font-weight: 900;">Mission</h3>
+            <p>Heart of carthage is committed to providing the best real estate brokerage service through a team of professional and ethical property agents. Our mission is to become standard bearers for outstanding service in the UAE’s real estate market and to remain committed to our core values of open communication, accountability, innovation and teamwork</p>
+            <a href="#" class="aa-view-btn">View DetLails</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="aa-latest-property" style="margin-top: 4%;margin-bottom: 3%;">
+    <div class="container">
+      <div class="aa-latest-property-area">
+        <div class="aa-title">
+          <h2>Rent</h2>
+          <span></span>
+                 
+        </div>
+        <div class="row" style="text-align: center;margin-top: 20%; " *ngIf="crud.loadingRent">
+          <div class="col-12">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                  <span class="visually-hidden"> Loading...</span>
+                </div>
+          </div>
+      </div>
+     
+ 
+        <div class="aa-latest-properties-content">
+
+         <div class="row" *ngIf="!crud.loadingRent">
+          
+            <div class="ft-ctn" *ngFor="let vila of tabRent; index as i">
+              <div class="title-box" style="background-color: rgb(32, 206, 179);">Rent</div>
+              <div class="cover-image">
+                <img [src]="vila.imageProfil" />
+              </div>
+              <div class="details-ctn">
+                <p class="item-details-ctn"><i class="fa-solid fa-sink"></i> {{vila.bath}} Baths</p>
+                <p class="item-details-ctn"><i class="fa-solid fa-bed"></i> {{vila.bed}} Beds</p>
+                <p class="item-details-ctn"><i class="fa-regular fa-square"></i> {{vila.surface}} SQ FT</p>
+              </div>
+              <p class="title">{{vila.title}}</p>
+              <div class="description">
+                {{vila. stitle}} {{vila. prix}}
+              </div>
+              <div class="footer-box">
+                <div class="price"><span>AED</span><p>{{vila.prixFinal}}</p></div>
+                <p class="view-btn" (click)="nav4(i)"><i class="fa-regular fa-eye"></i></p>
+              </div>
+            </div>
+            <!--div class="col-md-4"  *ngFor="let vila of tabRent; index as i">
+              <article class="aa-properties-item">
+                <a  class="aa-properties-item-img">
+                  <img [src]="vila.imageProfil" alt="img">
+                </a>                
+                <div class="aa-tag for-rent">
+                Rent
+                </div>
+                <div class="aa-properties-item-content">
+                  <div class="aa-properties-info">
+                    <span>{{vila.room}} Rooms</span>
+                    <span>{{vila.bed}} Beds</span>
+                    <span>{{vila.bath}} Baths</span>
+                    <span>{{vila.surface}} SQ FT</span>
+                  </div>
+                  <div class="aa-properties-about">
+                    <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                    <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                  </div>
+                  <div class="aa-properties-detial">
+                    <span class="aa-price">
+                      {{vila.prixFinal}} <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                    </span>
+                    <a  class="aa-secondary-btn" (click)="nav4(i)">View Details</a>
+                  </div>
+                </div>
+              </article>
+            
+            </div-->
+          </div>
+        
+        </div>
+        <!--2-->
+        
+        <!--fin 2-->
+      </div>
+    </div>
+  </section>
+  <section id="aa-promo-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-promo-banner-area">
+            <h3 style="font-family: 'Quicksand', sans-serif;font-weight: 900;">Vision</h3>
+            <p> HEART OF CARTHAGE is determined to provide the most professional, honest, informative, and personalized service, thus establishing ourselves as the most preferred real estate brokerage in the UAE. Continuing with our tradition of excellence and integrity, we constantly work to fulfill the objectives of our clients and building a long-term relationship based on trust.</p>
+            <a href="#" class="aa-view-btn">View DetLails</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service section -->
+  <section id="aa-service" >
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-service-area">
+            <div class="aa-title" style="margin-top: 50px;">
+              <h2>Our Services</h2>
+              <span></span>
+              <p>Heart of carthage is committed to providing the best real estate brokerage.</p>
+            </div>
+            <!-- service content -->
+            <div class="aa-service-content">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="aa-single-service">
+                    <div class="aa-service-icon">
+                      <span class="fa fa-home"></span>
+                    </div>
+                    <div class="aa-single-service-content">
+                      <h4><a href="#" style="color: #C9A770;">Property Sale</a></h4>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="aa-single-service">
+                    <div class="aa-service-icon">
+                      <span class="fa fa-check"></span>
+                    </div>
+                    <div class="aa-single-service-content">
+                      <h4><a href="#"style="color: #C9A770;">Property Rent</a></h4>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="aa-single-service">
+                    <div class="aa-service-icon">
+                      <span class="fa fa-crosshairs"></span>
+                    </div>
+                    <div class="aa-single-service-content">
+                      <h4><a href="#" style="color: #C9A770;">Property Development</a></h4>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="aa-single-service">
+                    <div class="aa-service-icon">
+                      <span class="fa fa-bar-chart-o"></span>
+                    </div>
+                    <div class="aa-single-service-content">
+                      <h4><a href="#" style="color: #C9A770;">Market Analysis</a></h4>
+                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- / Service section -->
+  <section id="aa-promo-banner" style="margin-top: 50px;margin-bottom: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-promo-banner-area">
+            <h3 style="font-family: 'Quicksand', sans-serif;font-weight: 600;">Other Services</h3>
+            <div class="main-banner" id="top">
+              <div class="container-fluid">
+                  <div class="row">
+                     
+                      <div class="col-12">
+                          <div class="right-content" >
+                              
+                              <div class="row" >
+                                 
+                                  <div class="col-lg-4"   >
+                                      <div class="right-first-image">
+                                          <div class="thumb">
+                                              <div class="inner-content" style="opacity: 0.8!important;" >
+                                                  <h4 style="color:#C9A770">Visas in Dubai</h4>
+                                                  <span style="color:#C9A770" >The residency visas in Dubai vary in type,</span>
+                                              </div>
+                                              <div class="hover-content" style="opacity: 0.8 !important;">
+                                                  <div class="inner" style="opacity: 3 !important;">
+                                                      <h4>
+                                                        Visas in Dubai</h4>
+                                                      <p> The residency visas in Dubai vary in type,</p>
+                                                      <div class="main-border-button">
+                                                          <a href="#" >Discover More</a>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <img src="assets/images/visa.png" alt="heart-of-carthage-dubai">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4"   >
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content" style="opacity: 0.8!important;" >
+                                                <h4 style="color:#C9A770">Golden Visa</h4>
+                                                <span style="color:#C9A770" > entry and golden visas</span>
+                                            </div>
+                                            <div class="hover-content" style="opacity: 0.8 !important;">
+                                                <div class="inner" style="opacity: 3 !important;">
+                                                    <h4>
+                                                      Golden Visa</h4>
+                                                    <p> entry and golden visas</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#" >Discover More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="assets/images/gold.png" alt="heart-of-carthage-dubai">
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-lg-4"   >
+                                  <div class="right-first-image">
+                                      <div class="thumb">
+                                          <div class="inner-content" style="opacity: 0.8!important;" >
+                                              <h4 style="color:#C9A770">accept cryptocurrency</h4>
+                                              <span style="color:#C9A770" > Advances in computing and cryptography</span>
+                                          </div>
+                                          <div class="hover-content" style="opacity: 0.8 !important;">
+                                              <div class="inner" style="opacity: 3 !important;">
+                                                  <h4>
+                                                    accept cryptocurrency</h4>
+                                                  <p> Advances in computing and cryptography</p>
+                                                  <div class="main-border-button">
+                                                      <a href="#" >Discover More</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <img src="assets/images/bit.jpg" alt="heart-of-carthage-dubai">
+                                      </div>
+                                  </div>
+                              </div>  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Promo Banner Section -->
+  
+  <!-- / Promo Banner Section -->
+  
+  <!-- Our Agent Section-->
+  
+  <!-- / Our Agent Section-->
+  
+  <!-- Client Testimonial -->
+  
+  <!-- Client Testimonial -->
+  
+  <!-- Client brand -->
+ 
+  <!-- / Client brand -->
+  
+  <!-- Latest blog -->
+  
+  <!-- / Latest blog -->
+  
+  <!-- Footer -->
+ 
+  <!-- / Footer -->
+ 

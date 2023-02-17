@@ -1,0 +1,76 @@
+ <!-- ***** Main Banner Area Start ***** -->
+ <div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Vilas & Townhouses</h2>
+                    <span>Awesome &amp; We are the best in real estate Dubai</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+
+
+<!-- ***** Products Area Starts ***** -->
+<section id="aa-latest-property">
+    <div class="container">
+      <div class="aa-latest-property-area">
+        <div class="aa-title">
+          <h2>Vilas & Townhouses </h2>
+          <span></span>
+                 
+        </div>
+        <div class="row" style="text-align: center;margin-top: 20%; " *ngIf="loading">
+          <div class="col-12">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                  <span class="visually-hidden"> Loading...</span>
+                </div>
+          </div>
+      </div>
+     
+ 
+        <div class="aa-latest-properties-content">
+         <div class="row" *ngIf="!loading">
+         
+            <div class="col-md-4"  *ngFor="let vila of tab; index as i">
+              <article class="aa-properties-item">
+                <a  class="aa-properties-item-img">
+                  <img [src]="vila.imageProfil" alt="img">
+                </a>                
+                <div class="aa-tag sold-out">
+               Vila
+                </div>
+                <div class="aa-properties-item-content">
+                  <div class="aa-properties-info">
+                    <span>{{vila.room}} Rooms</span>
+                    <span>{{vila.bed}} Beds</span>
+                    <span>{{vila.bath}} Baths</span>
+                    <span>{{vila.surface}} SQ FT</span>
+                  </div>
+                  <div class="aa-properties-about">
+                    <h3><a style="color: #C9A770;">{{vila.title}}</a></h3>
+                    <p>{{vila. stitle}} {{vila. prix}}</p>                      
+                  </div>
+                  <div class="aa-properties-detial">
+                    <span class="aa-price">
+                      {{vila.prixFinal}}  <img src="assets/images/2857905-200.png" style="height: 30px;width: 50px;" alt="Heart of carthage Dubai">
+                    </span>
+                    <a  class="aa-secondary-btn" (click)="nav2(i)">View Details</a>
+                  </div>
+                </div>
+              </article>
+            
+          </div>
+          </div>
+        
+        </div>
+        <!--2-->
+        
+        <!--fin 2-->
+      </div>
+    </div>
+  </section>
+<!-- ***** Products Area Ends ***** -->

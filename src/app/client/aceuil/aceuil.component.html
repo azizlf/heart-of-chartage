@@ -1,0 +1,66 @@
+<p class="logo-broker-design" >Real Estate Broker Dubai</p>
+<div class="nav-bar-language-select-container" (click)="this.langDropDown()">
+  
+  <div class="drop-down">
+    <p class="value"><img src="/assets/images/drapeaux/royaume-uni.png" />&nbsp;&nbsp;English</p>
+    <i class="fa-solid fa-caret-down"></i>
+  </div>
+
+</div>
+<div class="drop-list" id="dropList">
+    <p><img src="/assets/images/drapeaux/royaume-uni.png" />English</p>
+    <p><img src="/assets/images/drapeaux/france.png" />Français</p>
+    <p><img src="/assets/images/drapeaux/russie.png" />русский</p>
+    <p><img src="/assets/images/drapeaux/emirats-arabes-unis.png" />Arabe</p>
+</div>
+<div [ngClass]="statusClass" id="myTopnav">
+  <a href="/" ><img src="assets/images/logoPh.png" style="height:auto;width:auto;max-width: 150px;max-height:50px;" alt="heart-of-carthage-dubai"></a>
+                                <a routerLink="/about" (click)="myFunction()">About</a>
+                                <a  routerLink="/offs" (click)="myFunction()">Off-Plan</a>
+
+                               <a  routerLink="/vila" (click)="myFunction()">vilas</a>
+                               <a  routerLink="/rent" (click)="myFunction()">Rent</a>
+      
+                                <a  routerLink="/appr" (click)="myFunction()">Appartement & Marketrs </a>
+                                
+                                <a  routerLink="/contact-us" (click)="myFunction()">Contact Us</a>
+  <div class="btn-icons" id="btnIcons">
+
+    <a href="tel:{{phone}}" class="icon" *ngIf="affTel"
+
+      style=
+
+      "background: #25d366;
+      border-radius: 100px;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;"
+
+     >     
+      <i class="fa fa-phone"></i>
+    </a>
+    <a href="https://www.facebook.com/realestatedubaihoc/" class="icon" *ngIf="affTel"
+    
+    style="background: #1951e9;
+    border-radius: 100px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;"
+    >  
+
+      <i class="fab fa-facebook-f" style="color:white"></i>
+    </a>
+    <a href="javascript:void(0);" class="icon bars" (click)="myFunction()"  style="width: 50px;height: 48px;">
+      <i class="fa fa-bars"></i>
+    </a>
+
+  </div>
+</div>
+
+
