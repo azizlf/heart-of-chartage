@@ -1,0 +1,144 @@
+<div class="spinner-border" role="status" *ngIf="crud.loading">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <section *ngIf="crud.aj">
+      <h1>Ajout apportement</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">titre apportement</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="titre apportement" [(ngModel)]="appr.title">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">sous titre apportement</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" sous titre apportement" [(ngModel)]="appr.stitle">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">video</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" video" [(ngModel)]="appr.video">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">nombre roomms </label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder=" nombre rooms" [(ngModel)]="appr.room">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">nombre bed roomms </label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder=" nombre bed rooms" [(ngModel)]="appr.bed">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">nombre bath roomms </label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder=" nombre bath rooms" [(ngModel)]="appr.bath">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">surface </label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder=" nombre bath rooms" [(ngModel)]="appr.surface">
+              </div>
+              <!---carc-->
+              <div class="input-group mb-3">
+                <input
+                [(ngModel)]="carc"
+                  type="text"
+                  class="form-control"
+                  placeholder="ajouter cractrestique"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark" (click)="ajoutCarc()">
+                  ajouter
+                </button>
+              </div>
+              <table class="table table-striped"  >
+                <thead>
+                 
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of tabCarc; index as i">
+                    
+                    <td>{{ item}}</td>
+                    
+                    <td (click)="supCarc(i)"><button class="btn btn-primary" type="button"  >
+                      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
+                     suprimer
+                    </button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <!---finCra-->
+              <div class="form-group">
+                <label for="exampleFormControlInput1">title 3</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title3" [(ngModel)]="appr.prix">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">prix finale</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="prix final" [(ngModel)]="appr.prixFinal">
+              </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Discreption</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="appr.desc"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">ajout image</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="selectFile($event)" />
+                
+              </div>
+              <!---table image-->
+              <div class="container">
+                <div class="row">
+                  <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status" *ngIf='serIm.loadingImag'>
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3" *ngFor="let im of serIm.tabImages">
+                    
+                    <div class="small text-muted mt-2"><img [src]="im"  style=" width: 200px; height: 200px" /></div>
+                </div>
+                </div>
+              
+              </div>
+              <section>
+               
+                </section>
+          </div>
+          <div class="col-6" style="margin-left: 10%;">
+            <div style="margin-bottom: 20px;"> <button class="btn btn-primary" type="button" (click)="ajout()">ajout apportement</button></div>
+            <app-map3></app-map3>
+          </div>
+        </div>
+      </div>
+       
+             
+
+
+           
+  </section>
+  
+  <section *ngIf="crud.ac">
+      <h1>affiche apportement</h1>
+      
+      <table class="table table-striped"  >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">sous title</th>
+           
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appr of tabappr; index as i">
+            <th scope="row">1</th>
+            <td>{{appr.title}}</td>
+            <td>{{appr.stitle}}</td>
+            <td (click)="sup(i)"><button class="btn btn-primary" type="button"  >
+              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
+             suprimer
+            </button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+  </section>

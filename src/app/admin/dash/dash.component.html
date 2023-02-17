@@ -1,0 +1,339 @@
+<!--Main Navigation-->
+<header style="margin-top:100px;">
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" style="overflow: scroll;height: 800px;position:fixed" class="collapse d-lg-block sidebar collapse bg-white" >
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4" >
+       
+          <a  class="list-group-item list-group-item-action py-2 ripple" style="margin-top: 100px;" (click)="funcAffOff()"
+            ><i class="fas fa-chart-line fa-fw me-3"></i> <div class="accordion" id="accordionExample1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                     off-plan
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                     <p><a (click)="funcAffAjOff()">ajout</a></p>
+                     <p><a (click)="funcAffConsOff()">consultation</a></p>
+                    </div>
+                  </div>
+                </div>
+               
+              </div></a
+          >
+          <a  class="list-group-item list-group-item-action py-2 ripple" (click)="funcAffVila()"
+          ><i class="fas fa-chart-line fa-fw me-3"></i>  <div class="accordion" id="accordionExample1">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVila" aria-expanded="true" aria-controls="collapseOne">
+                 Vila
+                </button>
+              </h2>
+              <div id="collapseVila" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+                <div class="accordion-body">
+                  <p><a (click)="funcAffAjOff()">ajout</a></p>
+                  <p><a (click)="funcAffConsOff()">consultation</a></p>
+                </div>
+              </div>
+            </div>
+           
+          </div></a
+        >
+        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="funcAffAppar()"
+        ><i class="fas fa-chart-line fa-fw me-3"></i> <i class="fas fa-chart-line fa-fw me-3"></i> 
+         <div class="accordion" id="accordionExample1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAppar" aria-expanded="true" aria-controls="collapseOne">
+              Apportemment
+              </button>
+            </h2>
+            <div id="collapseAppar" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+              <div class="accordion-body">
+                <p><a (click)="funcAffAjOff()">ajout</a></p>
+                <p><a (click)="funcAffConsOff()">consultation</a></p>
+              </div>
+            </div>
+          </div>
+         
+        </div></a
+      >
+      <a  class="list-group-item list-group-item-action py-2 ripple" (click)="funcAffRent()"
+      ><i class="fas fa-chart-line fa-fw me-3"></i> 
+      <div class="accordion" id="accordionExample1">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRent" aria-expanded="true" aria-controls="collapseOne">
+        Rent
+          </button>
+        </h2>
+        <div id="collapseRent" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+          <div class="accordion-body">
+            <p><a (click)="funcAffAjOff()">ajout</a></p>
+            <p><a (click)="funcAffConsOff()">consultation</a></p>
+          </div>
+        </div>
+      </div>
+      </div></a
+    >
+          <a  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-building fa-fw me-3"></i><span>courbe</span></a
+          >
+          <a  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-user fa-fw me-3" (click)="affiheTab()" ></i><span>Users</span></a
+          >
+          <a  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a
+          >
+          <a  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-users fa-fw me-3" href="https://analytics.google.com/analytics/web/#/p344424455/reports/intelligenthome"></i><span>Soa</span></a
+          >
+          <a  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Brand -->
+        <a class="navbar-brand" >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="25"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input
+            autocomplete="off"
+            type="search"
+            class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)'
+            style="min-width: 225px;"
+          />
+          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+        </form>
+  
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+              
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" >Some news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" >Another news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" >Something else here</a>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- Icon -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0" >
+              <i class="fas fa-fill-drip"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+  
+          <!-- Icon dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+              
+              id="navbarDropdown"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="flag-united-kingdom flag m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" 
+                  ><i class="flag-united-kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i
+                ></a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-poland flag"></i>Polski</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-china flag"></i>中文</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-japan flag"></i>日本語</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-germany flag"></i>Deutsch</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-france flag"></i>Français</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-spain flag"></i>Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-russia flag"></i>Русский</a>
+              </li>
+              <li>
+                <a class="dropdown-item" ><i class="flag-portugal flag"></i>Português</a>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+              
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                class="rounded-circle"
+                height="22"
+                alt="Avatar"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" >My profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" >Settings</a>
+              </li>
+              <li>
+                <a class="dropdown-item" >Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top:100px;overflow: scroll;height:100%">
+   <section *ngIf="crud.affOff">
+    <div  style="margin-top: 300px;margin-left: 10%;margin-right: 10%;">
+        <app-off-plan></app-off-plan>
+    </div>
+    
+   </section>
+   <section *ngIf="crud.affVila">
+    <div  style="margin-top: 300px;margin-left: 10%;margin-right: 10%;">
+        <app-vila></app-vila>
+    </div>
+    
+   </section>
+   <section *ngIf="crud.affRent">
+    <div  style="margin-top: 300px;margin-left: 10%;margin-right: 10%;">
+        <app-rent></app-rent>
+    </div>
+    
+   </section>
+   <section *ngIf="crud.affAppr">
+    <div  style="margin-top: 300px;margin-left: 10%;margin-right: 10%;">
+        <app-appartement></app-appartement>
+    </div>
+    </section>
+   <section>
+    <div  class="spinner-border" role="status" *ngIf="affSp">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <h1>User</h1>
+  <table class="table table-striped" *ngIf="affiTab">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">date</th>
+          <th scope="col">name</th>
+          <th scope="col">email</th>
+          <th scope="col">phone</th>
+          <th scope="col">type maison</th>
+          <th scope="col">typMoney</th>
+          <th scope="col">typB</th>
+          <th scope="col">country</th>
+          <th scope="col">project</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tab; index as i;">
+          <th scope="row">{{i}}</th>
+          <td>{{item.DateN}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.typRef}}</td>
+          <td>{{item.typM}}</td>
+          <td>{{item.typB}}</td>
+          <td>{{item.country}}</td>
+          <td>{{item.project}}</td>
+          
+          <button class="btn btn-info btn-lg btn-block" type="button" >action</button>
+        </tr>
+        
+      </tbody>
+    </table>
+    <div style="margin-top:20px"><h1>User cible</h1></div>
+   </section>
+  </main>
+  <!--Main layout-->
+ 
