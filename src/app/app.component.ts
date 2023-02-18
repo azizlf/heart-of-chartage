@@ -19,6 +19,11 @@ export class AppComponent {
   
   elementSurvey:any
   phoneScreen:any
+  step = 0
+
+  questions = ["question number 1?","question number 2?","question number 3?"]
+
+  currentQuestion = this.questions[0]
   
   animationEleSurvey(){
 
@@ -60,6 +65,70 @@ export class AppComponent {
     },5600)
 
 
+
+  }
+
+  finishedSurveyAnimation(){
+
+    this.elementSurvey = document.getElementById("logoSurvey")
+    this.elementSurvey.style.transform="scale(2)"
+    this.elementSurvey.style.top="30%"
+    this.elementSurvey.style.left="40%"
+
+    setTimeout(()=>{
+      this.elementSurvey = document.getElementById("thankText")
+      this.elementSurvey.style.display="block"
+    },1200)
+
+    setTimeout(()=>{
+      this.elementSurvey = document.getElementById("backBtn")
+      this.elementSurvey.style.display="block"
+
+    },2000)
+
+  }
+
+  nextQuestion(){
+
+    this.elementSurvey = document.getElementById("nameLogo")
+
+    this.elementSurvey.style.display="none"
+
+    this.elementSurvey = document.getElementById("btnYes")
+
+    this.elementSurvey.style.display="none"
+
+    this.elementSurvey = document.getElementById("btnNo")
+
+    this.elementSurvey.style.display="none"
+
+    if(step < this.questions.length){
+
+      step++
+
+      this.currentQuestion = this.questions[step]
+
+    }else{
+
+      this.elementSurvey = document.getElementById("skipBtn")
+
+      this.elementSurvey.style.opacity="0"
+
+      this.elementSurvey.style.pointerEvents="none"
+
+      finishedSurveyAnimation()
+
+    }
+
+  }
+
+  backFromSurvey(){
+
+    this.elementSurvey = document.getElementById("surveyContainer")
+    
+    this.elementSurvey.style.display="none"
+
+    this.surveyIsOpen = false    
 
   }
 

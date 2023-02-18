@@ -3,6 +3,8 @@
 <app-footer></app-footer>-->
 
 <div class="survey-container" id="surveyContainer">
+	<div class="thank-text" id="thankText">Thank you<br>your answers has submited<br>successfully</div>
+	<button class="return-btn" id="backBtn">Back</button>
 	<div class="header">
 		<img id="logoSurvey" src="assets/images/logoHOCD.png" alt="logo"/>
 		<div id="nameLogo" class="name">Heart of chartage Dubai</div>
@@ -11,8 +13,8 @@
 		<div class="ctn">
 			<div id="questionSurvey" class="question">Hello world , first   Hello world , first question 1  Hello , first question 1 Hello world , first question 1 ?</div>
 			<div class="action-buttons">
-				<button id="btnYes">Yes</button>
-				<button id="btnNo">No</button>
+				<button id="btnYes" (click)="nextQuestion()">Yes</button>
+				<button id="btnNo" (click)="nextQuestion()">No</button>
 			</div>
 		</div>
 	</div>

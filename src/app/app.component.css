@@ -121,7 +121,7 @@
 
 		font-size: 23px;
 		margin-bottom: 10%;
-		color: #1c1c1c;
+		color: #494949;
 		animation: surveyAnim .2s;
 		display: none;
 		transition: .4s;
@@ -183,7 +183,55 @@
 		pointer-events: none;
 		transition: .5s;
 
-	} 
+	}
+	.survey-container .thank-text{
+
+		position: absolute;
+		top: 45%;
+		font-size: 25px;
+		color: #353535;
+		width: 100%;
+		animation: thankTextAnim 1s;
+		pointer-events: none;
+		display: none;
+
+	}
+
+	@keyframes thankTextAnim{
+
+		0%{
+
+			opacity: 0;
+
+		}
+
+	}
+
+	.survey-container .return-btn{
+	  position: absolute;
+	  top: 62%;
+	  left: 30%;
+	  width: 38%;
+	  padding: 3% 0;
+	  background: #c5a570;
+	  border: none;
+	  color: white;
+	  font-size: 22px;
+	  animation: BtnReturn .7s;
+	  display: none;
+	}
+
+
+	@keyframes BtnReturn{
+
+		0%{
+
+			opacity: 0;
+			transform: translateY(50%);
+
+		}
+
+	}
 
 
 }
