@@ -106,7 +106,7 @@ export class AppComponent {
 
       this.step++
 
-      this.currentQuestion = this.questions[step]
+      this.currentQuestion = this.questions[this.step]
 
     }else{
 
