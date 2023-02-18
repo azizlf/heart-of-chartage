@@ -90,7 +90,7 @@ export class AppComponent {
 
   nextQuestion(){
 
-    this.elementSurvey = document.getElementById("nameLogo")
+    this.elementSurvey = document.getElementById("questionSurvey")
 
     this.elementSurvey.style.display="none"
 
@@ -107,6 +107,18 @@ export class AppComponent {
       this.step++
 
       this.currentQuestion = this.questions[this.step]
+
+      this.elementSurvey = document.getElementById("questionSurvey")
+
+      this.elementSurvey.style.display="block"
+
+      this.elementSurvey = document.getElementById("btnYes")
+
+      this.elementSurvey.style.display="block"
+
+      this.elementSurvey = document.getElementById("btnNo")
+
+      this.elementSurvey.style.display="block"
 
     }else{
 
