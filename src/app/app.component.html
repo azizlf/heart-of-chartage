@@ -1,13 +1,31 @@
 <!---<app-header></app-header>
 
 <app-footer></app-footer>-->
-<app-aceuil></app-aceuil>
-<router-outlet></router-outlet>
-<div style="z-index:5000 ; margin-top: 500px;margin-bottom: 200px;">     
+
+<div class="survey-container" id="surveyContainer">
+	<div class="header">
+		<img id="logoSurvey" src="assets/images/logoHOCD.png" alt="logo"/>
+		<div id="nameLogo" class="name">Heart of chartage Dubai</div>
+	</div>
+	<div class="content">
+		<div class="ctn">
+			<div id="questionSurvey" class="question">Hello world , first   Hello world , first question 1  Hello , first question 1 Hello world , first question 1 ?</div>
+			<div class="action-buttons">
+				<button id="btnYes">Yes</button>
+				<button id="btnNo">No</button>
+			</div>
+		</div>
+	</div>
+	<button class="skip-btn" id="skipBtn">Skip</button>
+</div>
+
+<app-aceuil *ngIf="!surveyIsOpen"></app-aceuil>
+<router-outlet *ngIf="!surveyIsOpen"></router-outlet>
+<div *ngIf="!surveyIsOpen" style="z-index:5000 ; margin-top: 500px;margin-bottom: 200px;">     
 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+971%2058%20218%209263&text=%D8%A7%D8%B1%D8%B3%D9%84%20%D8%A7%D9%84%D8%A2%D9%86%20%D8%B7%D9%84%D8%A8%D9%83">
 		<div class="whatsapp-bull">
 			<i class="fa-brands fa-whatsapp"></i>
 		</div>
 	</a>
 </div>
-<app-footer></app-footer>
+<app-footer *ngIf="!surveyIsOpen"></app-footer>
