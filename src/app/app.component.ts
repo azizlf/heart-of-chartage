@@ -104,7 +104,7 @@ export class AppComponent {
 
     this.elementSurvey.style.display="none"
 
-    if(this.step < this.questions.length){
+    if(this.step < (this.questions.length-1)){
 
       this.step++
 
