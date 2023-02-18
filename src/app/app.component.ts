@@ -72,7 +72,7 @@ export class AppComponent {
     if(this.phoneScreen.matches){  
       setTimeout(()=>{
         this.animationEleSurvey()
-        this.surveyIsOpen = true   
+        this.surveyIsOpen = true    
       },5000)
 
     }
