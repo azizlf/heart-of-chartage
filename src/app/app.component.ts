@@ -102,9 +102,9 @@ export class AppComponent {
 
     this.elementSurvey.style.display="none"
 
-    if(step < this.questions.length){
+    if(this.step < this.questions.length){
 
-      step++
+      this.step++
 
       this.currentQuestion = this.questions[step]
 
@@ -116,7 +116,7 @@ export class AppComponent {
 
       this.elementSurvey.style.pointerEvents="none"
 
-      finishedSurveyAnimation()
+      this.finishedSurveyAnimation()
 
     }
 
