@@ -70,6 +70,8 @@ export class AppComponent {
 
   finishedSurveyAnimation(){
 
+    this.elementSurvey = document.getElementById("nameLogo")
+    this.elementSurvey.style.display="none"
     this.elementSurvey = document.getElementById("logoSurvey")
     this.elementSurvey.style.transform="scale(2)"
     this.elementSurvey.style.top="30%"
@@ -108,17 +110,21 @@ export class AppComponent {
 
       this.currentQuestion = this.questions[this.step]
 
-      this.elementSurvey = document.getElementById("questionSurvey")
+      setTimeout(()=>{
 
-      this.elementSurvey.style.display="block"
+        this.elementSurvey = document.getElementById("questionSurvey")
 
-      this.elementSurvey = document.getElementById("btnYes")
+        this.elementSurvey.style.display="block"
 
-      this.elementSurvey.style.display="block"
+        this.elementSurvey = document.getElementById("btnYes")
 
-      this.elementSurvey = document.getElementById("btnNo")
+        this.elementSurvey.style.display="block"
 
-      this.elementSurvey.style.display="block"
+        this.elementSurvey = document.getElementById("btnNo")
+
+        this.elementSurvey.style.display="block"
+
+      },300)
 
     }else{
 
