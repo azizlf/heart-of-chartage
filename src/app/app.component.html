@@ -20,7 +20,28 @@
 	</div>
 	<button class="skip-btn" id="skipBtn">Skip</button>
 </div>
+<div class="survey-container-CL" id="surveyCtnCL">
 
+	<div class="content-survey-container">
+			
+		<div class="header-survey">
+			<img src="../assets/images/logoHOCD.png">
+			<div class="name">Heart Of Carthage Dubai</div>
+		</div>
+		<div class="content-questions">
+			<div class="qst-ctn">
+				<div class="question">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?</div>
+				<div class="buttons">
+					<button>yes</button>
+					<button>no</button>
+				</div>
+				<div class="skip-btn">skip</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
 <app-aceuil *ngIf="!surveyIsOpen"></app-aceuil>
 <router-outlet *ngIf="!surveyIsOpen"></router-outlet>
 <div *ngIf="!surveyIsOpen" style="z-index:5000 ; margin-top: 500px;margin-bottom: 200px;">     

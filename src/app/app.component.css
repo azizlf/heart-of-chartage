@@ -17,6 +17,147 @@
 
 }
 
+.survey-container-CL{
+
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 800000000000000000000000000000000000000000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0000006e;
+	perspective: 10000px;
+	animation: surveyContainerAnim .6s;
+}
+
+@keyframes surveyContainerAnim{
+
+	0%{
+
+		opacity: 0;
+
+	}
+
+}
+
+.survey-container-CL .content-survey-container{
+
+	width: 70%;
+	background-color: white;
+	border-top: .6vw solid #9c855f;
+	animation: surveyContentContainerAnim .8s;
+	padding: 3% 0;
+	padding-bottom: 10%;
+	position: relative;
+
+}
+
+
+@keyframes surveyContentContainerAnim{
+
+	0%{
+
+		opacity: 0;
+		transform: translateY(-20%) rotateX(60deg);
+
+	}
+
+}
+
+
+
+.survey-container-CL .content-survey-container .header-survey{
+
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.6vw;
+	color: #9c855f;
+	text-transform: uppercase;
+	margin-bottom: 10%;
+
+}
+
+.survey-container-CL .content-survey-container .header-survey img{
+
+	width: 10%;
+
+}
+
+
+.survey-container-CL .content-survey-container .content-questions{
+
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn{
+
+	width: 70%;
+	height: 80%;
+
+}
+
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question{
+
+	font-size: 1.4vw;
+	margin-bottom: 8%;
+	font-size: 1.7vw;
+	color: #252525;
+	font-family: 'Nanum Gothic', sans-serif;
+
+}
+
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .buttons{
+
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .buttons button{
+
+	width: 16%;
+	padding: 1.4% 0;
+	background-color: #e0e0e0;
+	border: none;
+	margin-right: 3%;
+	font-size: 1.6vw;
+	cursor: pointer;
+	transition: .4s;
+	font-family: 'Nanum Gothic', sans-serif;
+	text-transform: uppercase;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .buttons button:hover{
+
+	background-color: #9c855f;
+	color: white;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .skip-btn{
+
+	text-align: center;
+	font-size: 2vw;
+	text-decoration: underline;
+	color: #9c855f;
+	cursor: pointer;
+	position: absolute;
+	top: 3%;
+	right: 4%;
+
+}
+
 .survey-container{
 
 	display: none;
@@ -43,6 +184,10 @@
 	    color: white;
 	    cursor: pointer;
 
+	}
+
+	.survey-container-CL{
+		display: none;
 	}
 
 	.survey-container{
@@ -114,6 +259,7 @@
 	.survey-container .content .ctn{
 
 		width: 80%;
+		transition: .4s;
 
 	}
 

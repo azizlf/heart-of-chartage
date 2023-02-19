@@ -24,7 +24,14 @@ export class AppComponent {
   questions = ["question number 1?","question number 2?","question number 3?"]
 
   currentQuestion = this.questions[0]
-  
+    
+  surveyCLOpen(){
+
+    this.elementSurvey = document.getElementById("surveyCtnCL")
+    this.elementSurvey.style.display="flex"
+
+  }
+
   animationEleSurvey(){
 
     this.elementSurvey = document.getElementById("surveyContainer")
@@ -160,6 +167,12 @@ export class AppComponent {
       setTimeout(()=>{
         this.animationEleSurvey()
         this.surveyIsOpen = true    
+      },5000)
+
+    }else{
+
+      setTimeout(()=>{
+        this.surveyCLOpen()   
       },5000)
 
     }
