@@ -24,11 +24,23 @@ export class AppComponent {
   questions = ["question number 1?","question number 2?","question number 3?"]
 
   currentQuestion = this.questions[0]
+
+  surveyIsOpen = false
+
+  answers:any = []
+
     
   surveyCLOpen(){
 
     this.elementSurvey = document.getElementById("surveyCtnCL")
     this.elementSurvey.style.display="flex"
+
+  }
+
+  surveyCLClose(){
+
+    this.elementSurvey = document.getElementById("surveyCtnCL")
+    this.elementSurvey.style.display="none"
 
   }
 
@@ -97,7 +109,7 @@ export class AppComponent {
 
   }
 
-  nextQuestion(){
+  nextQuestion(ans:any){
 
     this.elementSurvey = document.getElementById("questionSurvey")
 
@@ -114,6 +126,8 @@ export class AppComponent {
     if(this.step < (this.questions.length-1)){
 
       this.step++
+
+      this.answers.push({question:this.currentQuestion,answer:ans+""})
 
       this.currentQuestion = this.questions[this.step]
 
@@ -135,6 +149,8 @@ export class AppComponent {
 
     }else{
 
+      console.log(this.answers)
+
       this.elementSurvey = document.getElementById("skipBtn")
 
       this.elementSurvey.style.opacity="0"
@@ -142,6 +158,10 @@ export class AppComponent {
       this.elementSurvey.style.pointerEvents="none"
 
       this.finishedSurveyAnimation()
+
+      this.elementSurvey = document.getElementById("contentQuestions")
+
+      this.elementSurvey.style.display="none"
 
     }
 
@@ -157,7 +177,7 @@ export class AppComponent {
 
   }
 
-  surveyIsOpen = false
+
 
   ngOnInit() {
 

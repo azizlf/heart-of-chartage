@@ -4,7 +4,7 @@
 
 <div class="survey-container" id="surveyContainer">
 	<div class="thank-text" id="thankText">Thank you<br>your answers has submited<br>successfully</div>
-	<button class="return-btn" (click)="backFromSurvey()" id="backBtn">Back</button>
+	<button class="return-btn"   id="backBtn">Back</button>
 	<div class="header">
 		<img id="logoSurvey" src="assets/images/logoHOCD.png" alt="logo"/>
 		<div id="nameLogo" class="name">Heart of chartage Dubai</div>
@@ -13,12 +13,12 @@
 		<div class="ctn">
 			<div id="questionSurvey" class="question">{{currentQuestion}}</div>
 			<div class="action-buttons">
-				<button id="btnYes" (click)="nextQuestion()">Yes</button>
-				<button id="btnNo" (click)="nextQuestion()">No</button>
+				<button id="btnYes" (click)="nextQuestion('yes')">Yes</button>
+				<button id="btnNo" (click)="nextQuestion('no')">No</button>
 			</div>
 		</div>
 	</div>
-	<button class="skip-btn" id="skipBtn">Skip</button>
+	<button class="skip-btn" id="skipBtn" (click)="backFromSurvey()">Skip</button>
 </div>
 <div class="survey-container-CL" id="surveyCtnCL">
 
@@ -28,15 +28,19 @@
 			<img src="../assets/images/logoHOCD.png">
 			<div class="name">Heart Of Carthage Dubai</div>
 		</div>
-		<div class="content-questions">
+		<div class="content-questions" id="contentQuestions">
 			<div class="qst-ctn">
-				<div class="question">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?</div>
+				<div class="question"> {{currentQuestion}} </div>
 				<div class="buttons">
-					<button>yes</button>
-					<button>no</button>
+					<button (click)="nextQuestion('yes')">yes</button>
+					<button (click)="nextQuestion('no')">no</button>
 				</div>
-				<div class="skip-btn">skip</div>
+				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
 			</div>
+		</div>
+		<div class="finished-survey">
+			<div class="text">Thank you!<br><br>your answers has been submited successfully</div>
+			<button (click)="surveyCLClose()" >Back</button>
 		</div>
 
 	</div>
