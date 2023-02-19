@@ -167,13 +167,13 @@ export class AppComponent {
       setTimeout(()=>{
         this.animationEleSurvey()
         this.surveyIsOpen = true    
-      },5000)
+      },20000)
 
     }else{
 
       setTimeout(()=>{
         this.surveyCLOpen()   
-      },5000)
+      },20000)
 
     }
 
