@@ -111,6 +111,8 @@ export class AppComponent {
 
   nextQuestion(ans:any){
 
+    this.answers.push({question:this.currentQuestion,answer:ans+""})
+
     this.elementSurvey = document.getElementById("questionSurvey")
 
     this.elementSurvey.style.display="none"
@@ -126,8 +128,6 @@ export class AppComponent {
     if(this.step < (this.questions.length-1)){
 
       this.step++
-
-      this.answers.push({question:this.currentQuestion,answer:ans+""})
 
       this.currentQuestion = this.questions[this.step]
 
@@ -147,9 +147,8 @@ export class AppComponent {
 
       },300)
 
-    }else{
-
-      console.log(this.answers)
+    }
+    else{
 
       this.elementSurvey = document.getElementById("skipBtn")
 
@@ -163,8 +162,13 @@ export class AppComponent {
 
       this.elementSurvey.style.display="none"
 
-    }
+      this.elementSurvey = document.getElementById("finishedSurvey")
 
+      this.elementSurvey.style.display="block"
+
+      console.log(this.answers)
+
+    }
   }
 
   backFromSurvey(){
