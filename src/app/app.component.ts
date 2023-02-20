@@ -21,7 +21,7 @@ export class AppComponent {
   phoneScreen:any
   step = 0
 
-  questions = ["question number 1?","question number 2?","question number 3?"]
+  questions = ["Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?","Le lorem ipsum est, en imprimerie, une suite de mots sans signification?","Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provis?"]
 
   currentQuestion = this.questions[0]
 
@@ -112,6 +112,10 @@ export class AppComponent {
   nextQuestion(ans:any){
 
     this.answers.push({question:this.currentQuestion,answer:ans+""})
+
+    this.elementSurvey = document.getElementById("progressBarSteps")
+
+    this.elementSurvey.style.width = (this.answers.length / this.questions.length)*100+"%"
 
     this.elementSurvey = document.getElementById("questionSurvey")
 

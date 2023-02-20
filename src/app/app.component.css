@@ -45,10 +45,9 @@
 
 	width: 70%;
 	background-color: white;
-	border-top: .6vw solid #9c855f;
 	animation: surveyContentContainerAnim .8s;
 	padding: 3% 0;
-	padding-bottom: 10%;
+	padding-bottom: 6%;
 	position: relative;
 
 }
@@ -66,17 +65,31 @@
 }
 
 
+.survey-container-CL .content-survey-container .progress-bar-steps{
+
+	width: 0%;
+	padding: .3% 0;
+	background-color: #9c855f;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transition: .4s;
+
+}
+
+
 
 .survey-container-CL .content-survey-container .header-survey{
 
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: left;
 	font-size: 1.6vw;
 	color: #9c855f;
 	text-transform: uppercase;
 	margin-bottom: 10%;
+	padding-left: 2%;
 
 }
 
@@ -107,7 +120,7 @@
 .survey-container-CL .content-survey-container .content-questions .qst-ctn .question{
 
 	font-size: 1.4vw;
-	margin-bottom: 8%;
+	margin-bottom: 18%;
 	font-size: 1.7vw;
 	color: #252525;
 	font-family: 'Nanum Gothic', sans-serif;
@@ -120,6 +133,7 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 
 }
 
