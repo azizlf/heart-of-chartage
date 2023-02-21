@@ -54,6 +54,7 @@ import { ProductOffPlanComponent } from './client/product-off-plan/product-off-p
 import { Home1Component } from './client/home1/home1.component';
 import { NgxCarouselModule } from 'ngx-light-carousel';
 import { LoginComponent } from './admin/login/login.component';
+import { SurveyAppComponent } from './survey-app/survey-app.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ declarations: [
     ProductOffPlanComponent,
     Home1Component,
     LoginComponent,
+    SurveyAppComponent,
    
    
    
