@@ -326,12 +326,12 @@
 
 	.survey-container .header img{
 
-		width: 17%;
+		width: 15%;
 		position: absolute;
+		transform: scale(2);
+		top: 30%;
 		left: 40%;
-	  top: 47%;
-	  transform: scale(2);
-	  transition: 1.5s;
+	  	transition: 1.5s;
 
 	}
 
@@ -360,8 +360,9 @@
 		margin-bottom: 10%;
 		color: #494949;
 		animation: surveyAnim .2s;
-		display: none;
 		transition: .4s;
+		text-align: left;
+		display: none;
 
 	}
 
@@ -371,6 +372,41 @@
 			opacity: 0;
 			transform: translateY(15%);
 		}
+
+	}
+
+	.survey-container .content .ctn .choices{
+
+		width: 100%;
+		margin: 3% 0;
+
+	}
+	.survey-container .content .ctn .choices .choice-item{
+
+	    width: 100%;
+	    font-size: 18px;
+	    display: flex;
+	    align-items: center;
+	    margin: 8% 0;
+
+	}
+
+	.survey-container .content .ctn .choices .choice-item img{
+
+		width: 21%;
+		margin: 0 5%;
+
+	}
+
+
+	.survey-container .content .ctn .choices .choice-item .check-btn-item{
+
+		width: 11.3%;
+	    padding: 5% 0;
+	    background: transparent;
+	    box-shadow: inset 0 0 0px 3px white;
+	    border-radius: 100%;
+	    border: 2px solid #aa9065;
 
 	}
 

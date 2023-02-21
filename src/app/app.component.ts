@@ -265,69 +265,91 @@ export class AppComponent {
 
   }
 
-  nextQuestion(ans:any){
+  nextQuestion(ans:any,isChoicesNext:any){
 
-    this.answers.push({question:this.currentQuestion,answer:ans+""})
+    var checkAnswer = false
 
-    this.elementSurvey = document.getElementById("progressBarSteps")
-
-    this.elementSurvey.style.width = (this.answers.length / this.questions.length)*100+"%"
-
-    this.elementSurvey = document.getElementById("questionSurvey")
-
-    this.elementSurvey.style.display="none"
-
-    this.elementSurvey = document.getElementById("btnYes")
-
-    this.elementSurvey.style.display="none"
-
-    this.elementSurvey = document.getElementById("btnNo")
-
-    this.elementSurvey.style.display="none"
-
-    if(this.step < (this.questions.length-1)){
-
-      this.step++
-
-      this.currentQuestion = this.questions[this.step]
-
-      setTimeout(()=>{
-
-        this.elementSurvey = document.getElementById("questionSurvey")
-
-        this.elementSurvey.style.display="block"
-
-        this.elementSurvey = document.getElementById("btnYes")
-
-        this.elementSurvey.style.display="block"
-
-        this.elementSurvey = document.getElementById("btnNo")
-
-        this.elementSurvey.style.display="block"
-
-      },300)
+    if(ans === "yes" || ans === "no"){
+      
+      this.answers.push({question:this.currentQuestion[0].question,answer:ans+""})
+      checkAnswer = true
 
     }
     else{
 
-      this.elementSurvey = document.getElementById("skipBtn")
+      if(this.choiceId != ""){
+        this.answers.push({question:this.currentQuestion[0].question,answer:this.choiceId+""})
+        checkAnswer = true
+      }
 
-      this.elementSurvey.style.opacity="0"
+    }
 
-      this.elementSurvey.style.pointerEvents="none"
+    if(checkAnswer){
 
-      this.finishedSurveyAnimation()
+      this.elementSurvey = document.getElementById("progressBarSteps")
 
-      this.elementSurvey = document.getElementById("contentQuestions")
+      this.elementSurvey.style.width = (this.answers.length / this.questions.length)*100+"%"
+
+      this.elementSurvey = document.getElementById("questionSurvey")
 
       this.elementSurvey.style.display="none"
 
-      this.elementSurvey = document.getElementById("finishedSurvey")
+      this.elementSurvey = document.getElementById("btnYes")
 
-      this.elementSurvey.style.display="block"
+      this.elementSurvey.style.display="none"
 
-      console.log(this.answers)
+      this.elementSurvey = document.getElementById("btnNo")
 
+      this.elementSurvey.style.display="none"
+
+      this.step++
+
+      if(this.step < this.questions.length){
+
+        this.currentQuestion = [this.questions[this.step]]
+      
+        this.choices = this.currentQuestion[0].type
+
+        setTimeout(()=>{
+
+          this.elementSurvey = document.getElementById("questionSurvey")
+
+          this.elementSurvey.style.display="block"
+
+          this.elementSurvey = document.getElementById("btnYes")
+
+          this.elementSurvey.style.display="block"
+
+          if(!isChoicesNext){
+            this.elementSurvey = document.getElementById("btnNo")
+
+            this.elementSurvey.style.display="block"
+          }
+
+        },300)
+
+      }
+      else{
+
+        this.elementSurvey = document.getElementById("skipBtn")
+
+        this.elementSurvey.style.opacity="0"
+
+        this.elementSurvey.style.pointerEvents="none"
+
+        this.finishedSurveyAnimation()
+
+        this.elementSurvey = document.getElementById("contentQuestions")
+
+        this.elementSurvey.style.display="none"
+
+        this.elementSurvey = document.getElementById("finishedSurvey")
+
+        this.elementSurvey.style.display="block"
+
+        console.log(this.answers)
+
+      }
     }
   }
 
