@@ -29,14 +29,90 @@
 			<div class="name">Heart Of Carthage Dubai</div>
 		</div>
 		<div class="content-questions" id="contentQuestions">
-			<div class="qst-ctn">
-				<div class="question"> {{currentQuestion}} </div>
-				<div class="buttons">
-					<button (click)="nextQuestion('yes')">yes</button>
-					<button (click)="nextQuestion('no')">no</button>
+
+
+			<div class="qst-ctn" *ngIf="choices === 'default'">
+				<div class="question" *ngFor="let item of currentQuestion">
+					
+					<span> {{item.question}} </span>
+				</div>
+				<div class="buttons" >
+					<button (click)="nextQuestionCL('yes')" >yes</button>
+					<button (click)="nextQuestionCL('no')" >no</button>
 				</div>
 				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
 			</div>
+
+
+			<div class="qst-ctn" *ngIf="choices === 'payment'">
+				<div class="question" *ngFor="let item of payment">
+					
+					<span> {{item.question}} </span>
+
+					<div class="choices-container">
+						<div class="choices-content" *ngFor="let ch of item.choices">
+							<img [src]="ch.image" [alt]="ch.title"/>
+							<p>{{ch.title}}</p>
+							<div class="check-button" >
+								<div (click)="selectChoice(ch.title)" [ngStyle]="{'background-color':getBgItemChoices(ch.title)}"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="buttons" >
+					<button (click)="nextQuestionCL('next')">next</button>
+				</div>
+				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
+			</div>
+
+
+			<div class="qst-ctn" *ngIf="choices === 'budget'">
+				<div class="question" *ngFor="let item of budget">
+					
+					<span> {{item.question}} </span>
+
+					<div class="choices-container">
+						<div class="choices-content" *ngFor="let ch of item.choices">
+							<img [src]="ch.image" [alt]="ch.title"/>
+							<p>${{ch.title}}</p>
+							<div class="check-button" >
+								<div (click)="selectChoice(ch.title)" [ngStyle]="{'background-color':getBgItemChoices(ch.title)}"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="buttons" >
+					<button (click)="nextQuestionCL('next')">next</button>
+				</div>
+				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
+			</div>
+
+
+			<div class="qst-ctn" *ngIf="choices === 'plans'">
+				<div class="question" *ngFor="let item of plans">
+					
+					<span> {{item.question}} </span>
+
+					<div class="choices-container">
+						<div class="choices-content" *ngFor="let ch of item.choices">
+							<img [src]="ch.image" [alt]="ch.title"/>
+							<p>{{ch.title}}</p>
+							<div class="check-button" >
+								<div (click)="selectChoice(ch.title)" [ngStyle]="{'background-color':getBgItemChoices(ch.title)}"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="buttons" >
+					<button (click)="nextQuestionCL('next')">next</button>
+				</div>
+				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
+			</div>
+
+
 		</div>
 		<div class="finished-survey" id="finishedSurvey">
 			<div class="text">Thank you!<br><br>your answers has been submited successfully</div>

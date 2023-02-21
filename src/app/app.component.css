@@ -73,7 +73,7 @@
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	transition: .4s; 
+	transition: .4s;
 
 }
 
@@ -88,7 +88,7 @@
 	font-size: 1.6vw;
 	color: #9c855f;
 	text-transform: uppercase;
-	margin-bottom: 10%;
+	margin-bottom: 3%;
 	padding-left: 2%;
 
 }
@@ -120,13 +120,63 @@
 .survey-container-CL .content-survey-container .content-questions .qst-ctn .question{
 
 	font-size: 1.4vw;
-	margin-bottom: 18%;
+	margin-bottom: 5%;
 	font-size: 1.7vw;
 	color: #252525;
 	font-family: 'Nanum Gothic', sans-serif;
 
 }
 
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container{
+
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 6%;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container .choices-content{
+
+	width: 33%;
+	text-align: center;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container .choices-content p{
+
+	font-size: 2vw;
+	margin-bottom: 17%;
+
+}
+
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container .choices-content img{
+
+	width: 32%;
+	margin-bottom: 6%;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container .choices-content .check-button{
+
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+}
+
+.survey-container-CL .content-survey-container .content-questions .qst-ctn .question .choices-container .choices-content .check-button div{
+
+	width: 16%;
+	padding: 6.5%;
+	border: .2vw solid #9c855f;
+	border-radius: 100%;
+	cursor: pointer;
+	box-shadow: inset 0 0 0.2vw 2px white;
+
+}
 
 .survey-container-CL .content-survey-container .content-questions .qst-ctn .buttons{
 

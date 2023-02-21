@@ -21,13 +21,109 @@ export class AppComponent {
   phoneScreen:any
   step = 0
 
-  questions = ["Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?","Le lorem ipsum est, en imprimerie, une suite de mots sans signification?","Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provis?"]
+  questions = [
 
-  currentQuestion = this.questions[0]
+    {
+      question:"Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?",
+      type:"default",
+      choices:[],
+      buttons:["yes","no"]
+    },
+    {
+      question:"Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée ?",
+      type:"plans",
+      choices:[
+
+        {
+          image:"assets/images/images-survey/villa.png",
+          title:"Villa",
+        },
+        {
+          image:"assets/images/images-survey/apprt.png",
+          title:"Appartement",
+        },
+        {
+          image:"assets/images/images-survey/market-place.png",
+          title:"Market Place",
+        }
+
+      ],
+      buttons:["next"]
+    },
+    {
+      question:"Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée ?",
+      type:"budget",
+      choices:[
+
+        {
+          image:"assets/images/images-survey/cash.png",
+          title:"30,000",
+        },
+        {
+          image:"assets/images/images-survey/cash.png",
+          title:"50,000",
+        },
+        {
+          image:"assets/images/images-survey/cash.png",
+          title:"100,000 or more",
+        }
+
+      ],
+      buttons:["next"]
+    },
+    {
+      question:"Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée ?",
+      type:"payment",
+      choices:[
+
+        {
+          image:"assets/images/images-survey/cash.png",
+          title:"Cash",
+        },
+        {
+          image:"assets/images/images-survey/virement.png",
+          title:"Bank Transfert",
+        },
+        {
+          image:"assets/images/images-survey/crypto.png",
+          title:"Cryptocurrency",
+        }
+
+      ],
+      buttons:["next"]
+    },
+    {
+      question:"Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page?",
+      type:"default",
+      choices:[],
+      buttons:["yes","no"]
+    }
+
+  ]
+
+  currentQuestion:any = [this.questions[0]]
+
+  choiceId = ""
 
   surveyIsOpen = false
 
   answers:any = []
+
+  getBgItemChoices(title:any){
+
+    if(this.choiceId === title){
+      return "#9c855f"
+    }else{
+      return "transparent"
+    }
+
+  }
+
+  selectChoice(title:any){
+
+    this.choiceId = title
+
+  }
 
     
   surveyCLOpen(){
@@ -42,6 +138,66 @@ export class AppComponent {
     this.elementSurvey = document.getElementById("surveyCtnCL")
     this.elementSurvey.style.display="none"
 
+  }
+
+  choices = "default"
+  plans:any = [this.questions[1]]
+  payment:any = [this.questions[3]]
+  budget:any = [this.questions[2]]
+
+
+  nextQuestionCL(ans:any){
+
+    var checkAnswer = false
+
+    if(ans === "yes" || ans === "no"){
+      
+      this.answers.push({question:this.currentQuestion[0].question,answer:ans+""})
+      checkAnswer = true
+
+    }
+    else{
+
+      if(this.choiceId != ""){
+        this.answers.push({question:this.currentQuestion[0].question,answer:this.choiceId+""})
+        checkAnswer = true
+      }
+
+    }
+
+    if(checkAnswer){
+      
+      this.elementSurvey = document.getElementById("progressBarSteps")
+
+
+      this.elementSurvey.style.width = (this.answers.length / this.questions.length)*100+"%"
+
+      this.step++
+      if(this.step < this.questions.length){
+
+        this.currentQuestion = [this.questions[this.step]]
+      
+        this.choices = this.currentQuestion[0].type
+
+
+      }else{
+
+        this.elementSurvey = document.getElementById("contentQuestions")
+
+        this.elementSurvey.style.display="none"
+
+        this.elementSurvey = document.getElementById("finishedSurvey")
+
+        this.elementSurvey.style.display="block"
+
+        console.log(this.answers)
+
+      }
+
+    }
+
+    this.choiceId = ""
+    
   }
 
   animationEleSurvey(){
@@ -201,7 +357,7 @@ export class AppComponent {
 
       setTimeout(()=>{
         this.surveyCLOpen()   
-      },20000)
+      },300)
 
     }
 
