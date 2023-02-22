@@ -9,15 +9,17 @@ export class NotBoxEnglishComponent implements OnInit {
 
   constructor() { }
 
+  notifBoxEnglish:any
+
   animationNotifArabe(){
 
-    this.notifBoxArabe = document.getElementById("notifBoxArabe")
+    this.notifBoxEnglish = document.getElementById("notifBoxEnglish")
 
-    this.notifBoxArabe.style.display = "block"
+    this.notifBoxEnglish.style.display = "block"
 
     setTimeout(()=>{
-      this.notifBoxArabe.style.opacity = "0"
-      this.notifBoxArabe.style.right = "-100%"
+      this.notifBoxEnglish.style.opacity = "0"
+      this.notifBoxEnglish.style.right = "-100%"
     },6000)
 
   }
