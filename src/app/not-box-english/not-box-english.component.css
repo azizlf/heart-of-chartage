@@ -67,10 +67,15 @@
     top: 0;
     right: 0;
     background-color: #b8a17b;
-    animation: animProgressNotArabe 7s;
+    animation: animProgressNotEnglish 7s;
 
 }
 
+@keyframes animProgressNotEnglish{
+	0%{
+		width: 0%;
+	}
+}
 
 @media only screen and (max-width: 480px){
 
