@@ -55,6 +55,8 @@ import { Home1Component } from './client/home1/home1.component';
 import { NgxCarouselModule } from 'ngx-light-carousel';
 import { LoginComponent } from './admin/login/login.component';
 import { SurveyAppComponent } from './survey-app/survey-app.component';
+import { NotBoxArabeComponent } from './not-box-arabe/not-box-arabe.component';
+import { NotBoxEnglishComponent } from './not-box-english/not-box-english.component';
 
 
 @NgModule({
@@ -90,6 +92,8 @@ declarations: [
     Home1Component,
     LoginComponent,
     SurveyAppComponent,
+    NotBoxArabeComponent,
+    NotBoxEnglishComponent,
    
    
    

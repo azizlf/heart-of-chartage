@@ -359,7 +359,7 @@ export class SurveyAppComponent implements OnInit {
 
       setTimeout(()=>{
         this.surveyCLOpen()   
-      },300)
+      },20000)
 
     }
   }
