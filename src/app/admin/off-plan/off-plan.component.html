@@ -2,7 +2,8 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 <section *ngIf="crud.aj">
-    <h1>Ajout off-plan</h1>
+ 
+  <h1>Ajouter off plan</h1>  
 
 <div class="container">
 
@@ -35,10 +36,14 @@
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
             />
-            <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark" (click)="ajoutCarc()">
+            <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="selectFileSingle($event)" />
+            
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark" *ngIf="!serIm.loadingImagSingle" (click)="ajoutCarc()">
               ajouter
             </button>
+            <span class="spinner-grow spinner-grow-sm" role="status" *ngIf="serIm.loadingImagSingle" aria-hidden="true" ></span>
           </div>
+
           <table class="table table-striped"  >
             <thead>
              
@@ -46,10 +51,12 @@
             <tbody>
               <tr *ngFor="let item of tabCarc; index as i">
                 
-                <td>{{ item}}</td>
+                <td>{{ item.carc}}</td>
+
+                <td><img [src]="item.imageCarac" style="height:30px ;width: 30px;" alt=""></td>
                 
                 <td (click)="supCarc(i)"><button class="btn btn-primary" type="button"  >
-                  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
+                  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" >  </span>
                  suprimer
                 </button></td>
               </tr>
@@ -91,16 +98,19 @@
         </div>
          
     </div>
-    <div class="col-6" style="margin-left: 10%;">
-      <div  style="margin-bottom: 20px;">
-        <button class="btn btn-primary" type="button" (click)="ajout()">ajout off-plan</button>
-       </div>
-       <app-map3></app-map3>
+    <div class="col-6" style="margin-top: 10%;">
+      <app-map3></app-map3>
     </div>
+    
   </div>
 </div>
-   
-          
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button" (click)="ajout()"> Ajouter off PLAN</button>
+    <button class="btn btn-sm btn-outline-secondary" type="button">Annuler</button>
+  </form>
+</nav> 
+     
           
 </section>
 
@@ -114,20 +124,26 @@
           <th scope="col">title</th>
           <th scope="col">sous title</th>
          
-          <th scope="col">action</th>
+          <th scope="col">supprimer</th>
+          <th scope="col">modifier</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let off of tabOff; index as i">
-          <th scope="row">1</th>
+          <th scope="row">{{i+1}}</th>
           <td>{{off.title}}</td>
           <td>{{off.stitle}}</td>
           <td (click)="sup(i)"><button class="btn btn-primary" type="button"  >
             <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
            suprimer
           </button></td>
+          <td (click)="modif(i)"><button class="btn btn-primary" type="button"  >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
+           modifier
+          </button></td>
         </tr>
         
       </tbody>
     </table>
+    <app-update-offplan *ngIf="affModif" style="margin-top: 20px;"></app-update-offplan>
 </section>

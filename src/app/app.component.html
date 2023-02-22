@@ -1,11 +1,11 @@
 <!---<app-header></app-header>
 
 <app-footer></app-footer>-->
-<app-not-box-arabe></app-not-box-arabe>
+<app-not-box-english></app-not-box-english>
 <app-survey-app></app-survey-app>
-<app-aceuil ></app-aceuil>
-<router-outlet ></router-outlet>
-<div  style="z-index:5000 ; margin-top: 500px;margin-bottom: 200px;">     
+<app-aceuil *ngIf="crud.affAd"></app-aceuil>
+<router-outlet></router-outlet>
+<div style="z-index:5000 ; margin-top: 500px;margin-bottom: 200px;" *ngIf="crud.affAd">     
 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+971%2058%20218%209263&text=%D8%A7%D8%B1%D8%B3%D9%84%20%D8%A7%D9%84%D8%A2%D9%86%20%D8%B7%D9%84%D8%A8%D9%83">
 		<div class="whatsapp-bull">
 			<i class="fa-brands fa-whatsapp"></i>

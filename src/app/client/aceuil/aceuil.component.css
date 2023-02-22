@@ -7,7 +7,7 @@
   top: 4%;
   right: 2%;
   text-shadow: 1px 2px 0px #000000;
-  z-index: 50000000;
+  z-index: 50000;
   font-family: 'Cookie', cursive;
   pointer-events: none;
 }
@@ -199,11 +199,10 @@
     top: 1.7%;
     left: 4%;
     text-shadow: 1px 2px 0px #000000;
-    z-index: 50000000;
+    z-index: 50000;
     font-family: 'Cookie', cursive;
     pointer-events: none;
 
   }
 
 }
-

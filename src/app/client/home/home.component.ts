@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { ngxLightOptions } from  'ngx-light-carousel/public-api'
 import { MatCarousel, MatCarouselComponent } from 'ng-mat-carousel'
+import * as  AOS from 'aos';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -74,7 +75,7 @@ export class HomeComponent implements OnInit {
   }
   constructor(public crud:CrudService , public serIm:ImgService,private http:HttpClient,private route:Router ) {
   
-    
+    AOS.init();
 
    }
    Navigate(elem: HTMLElement ) {
@@ -205,7 +206,7 @@ export class HomeComponent implements OnInit {
 
   logoOffPlan(devName){
 
-    const devp_name = devName.toLowerCase() 
+    const devp_name = devName.toLowerCase().split(' ').join('') 
 
     return "/assets/images/developers/"+devp_name+".png"
 
@@ -220,7 +221,8 @@ export class HomeComponent implements OnInit {
   slideWidth:any
 
   ngOnInit(): void {
-
+   
+    
 
     //slider developers : scrolling auto
 

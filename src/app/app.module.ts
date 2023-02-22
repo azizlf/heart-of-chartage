@@ -21,7 +21,7 @@ import { ContactUsComponent } from './client/contact-us/contact-us.component';
 import { SingleProductComponent } from './client/single-product/single-product.component';
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import {Ng2TelInputModule} from 'ng2-tel-input';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 import { ModalModule, InputsModule, TooltipModule, PopoverModule, ButtonsModule} from 'angular-bootstrap-md';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {  WavesModule } from 'angular-bootstrap-md';
@@ -54,6 +54,14 @@ import { ProductOffPlanComponent } from './client/product-off-plan/product-off-p
 import { Home1Component } from './client/home1/home1.component';
 import { NgxCarouselModule } from 'ngx-light-carousel';
 import { LoginComponent } from './admin/login/login.component';
+import { LundingPageAziziComponent } from './azizi/lunding-page-azizi/lunding-page-azizi.component';
+import { CourbeCercleComponent } from './azizi/courbe-cercle/courbe-cercle.component';
+import { AvantageComponent } from './azizi/avantage/avantage.component';
+import { Avantage2Component } from './azizi/avantage2/avantage2.component';
+import { HomeAziziComponent } from './azizi/home-azizi/home-azizi.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { UpdateOffplanComponent } from './admin/update-offplan/update-offplan.component';
+
 import { SurveyAppComponent } from './survey-app/survey-app.component';
 import { NotBoxArabeComponent } from './not-box-arabe/not-box-arabe.component';
 import { NotBoxEnglishComponent } from './not-box-english/not-box-english.component';
@@ -91,12 +99,15 @@ declarations: [
     ProductOffPlanComponent,
     Home1Component,
     LoginComponent,
+    LundingPageAziziComponent,
+    CourbeCercleComponent,
+    AvantageComponent,
+    Avantage2Component,
+    HomeAziziComponent,
+    UpdateOffplanComponent,
     SurveyAppComponent,
     NotBoxArabeComponent,
-    NotBoxEnglishComponent,
-   
-   
-   
+    NotBoxEnglishComponent
   ],
   imports: [
     BrowserModule,
@@ -117,7 +128,19 @@ declarations: [
     NgxWhastappButtonModule,
     Ng2TelInputModule,
     MatCarouselModule.forRoot(),
-    NgxCarouselModule 
+    NgImageSliderModule,
+    NgxCarouselModule ,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+      /*kkk*/ 
+     
+    }),
   ],
   providers: [AsyncPipe,MessagingService],
   bootstrap: [AppComponent]

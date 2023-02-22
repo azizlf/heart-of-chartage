@@ -82,7 +82,7 @@ export class SurveyAppComponent implements OnInit {
     },
     {
       question:"Would you like a free estimate?",
-      type:"default",
+      type:"estimate",
       choices:[],
     }
 
@@ -129,16 +129,19 @@ export class SurveyAppComponent implements OnInit {
   plans:any = [this.questions[1]]
   payment:any = [this.questions[3]]
   budget:any = [this.questions[2]]
+  estimate:any = [this.questions[4]]
 
 
   nextQuestionCL(ans:any){
 
     var checkAnswer = false
+    var formOpen = ""
 
-    if(ans === "yes" || ans === "no"){
+    if(ans === "yes" || ans === "no" || ans === "yes-form"){
       
       this.answers.push({question:this.currentQuestion[0].question,answer:ans+""})
       checkAnswer = true
+      formOpen = ans
 
     }
     else{
@@ -171,11 +174,19 @@ export class SurveyAppComponent implements OnInit {
 
         this.elementSurvey.style.display="none"
 
-        this.elementSurvey = document.getElementById("finishedSurvey")
+        if(formOpen === "yes-form"){
 
-        this.elementSurvey.style.display="block"
+          this.elementSurvey = document.getElementById("formClient")
 
-        console.log(this.answers)
+          this.elementSurvey.style.display="flex"
+
+        }else{
+
+          this.elementSurvey = document.getElementById("finishedSurvey")
+
+          this.elementSurvey.style.display="block"
+
+        }
 
       }
 
@@ -183,6 +194,18 @@ export class SurveyAppComponent implements OnInit {
 
     this.choiceId = ""
     
+  }
+
+  finishFormClient(){
+
+    this.elementSurvey = document.getElementById("formClient")
+
+    this.elementSurvey.style.display="none"
+
+    this.elementSurvey = document.getElementById("finishedSurvey")
+
+    this.elementSurvey.style.display="block"
+
   }
 
   animationEleSurvey(){
@@ -234,19 +257,8 @@ export class SurveyAppComponent implements OnInit {
     this.elementSurvey.style.display="none"
     this.elementSurvey = document.getElementById("logoSurvey")
     this.elementSurvey.style.transform="scale(2)"
-    this.elementSurvey.style.top="30%"
-    this.elementSurvey.style.left="40%"
-
-    setTimeout(()=>{
-      this.elementSurvey = document.getElementById("thankText")
-      this.elementSurvey.style.display="block"
-    },1200)
-
-    setTimeout(()=>{
-      this.elementSurvey = document.getElementById("backBtn")
-      this.elementSurvey.style.display="block"
-
-    },2000)
+    this.elementSurvey.style.top="22%"
+    this.elementSurvey.style.left="42%"
 
   }
 
@@ -254,10 +266,13 @@ export class SurveyAppComponent implements OnInit {
 
     var checkAnswer = false
 
-    if(ans === "yes" || ans === "no"){
+    var formOpen = ""
+
+    if(ans === "yes" || ans === "no" || ans === "yes-form"){
       
       this.answers.push({question:this.currentQuestion[0].question,answer:ans+""})
       checkAnswer = true
+      formOpen = ans
 
     }
     else{
@@ -316,6 +331,8 @@ export class SurveyAppComponent implements OnInit {
       }
       else{
 
+        this.choices = ""
+
         this.elementSurvey = document.getElementById("skipBtn")
 
         this.elementSurvey.style.opacity="0"
@@ -328,14 +345,47 @@ export class SurveyAppComponent implements OnInit {
 
         this.elementSurvey.style.display="none"
 
-        this.elementSurvey = document.getElementById("finishedSurvey")
+        if(formOpen === "yes-form"){
 
-        this.elementSurvey.style.display="block"
+          this.elementSurvey = document.getElementById("formClientMobile")
 
-        console.log(this.answers)
+          this.elementSurvey.style.display="flex"
+
+        }else{
+
+          this.elementSurvey = document.getElementById("thankText")
+
+          this.elementSurvey.style.display="block"
+
+          setTimeout(()=>{
+            this.elementSurvey = document.getElementById("backBtn")
+            this.elementSurvey.style.display="block"
+
+          },2000)
+
+
+        }
 
       }
     }
+  }
+
+  finishFormClientMobile(){
+
+    this.elementSurvey = document.getElementById("formClientMobile")
+    
+    this.elementSurvey.style.display="none"
+
+    this.elementSurvey = document.getElementById("thankText")
+    
+    this.elementSurvey.style.display="block"
+
+    setTimeout(()=>{
+      this.elementSurvey = document.getElementById("backBtn")
+      this.elementSurvey.style.display="block"
+
+    },800)    
+
   }
 
   backFromSurvey(){

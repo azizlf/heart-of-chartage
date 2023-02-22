@@ -13,6 +13,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
+  public imageProfil=""
   public  loadingOff=false
   public dev=""
   public title=""
@@ -109,7 +110,7 @@ export class SingleProductComponent implements OnInit {
 
   getLogoDevp(dev){
 
-    const devp_name = dev.toLowerCase()
+    const devp_name = dev.toLowerCase().split(' ').join('') 
 
     return "/assets/images/developers/"+devp_name+".png" 
 
@@ -128,6 +129,7 @@ export class SingleProductComponent implements OnInit {
          ob=res.valueOf()  
          this.title=ob.title
          this.crud.project=ob.title
+         this.imageProfil=ob.imageProfil
          this.desc=ob.desc
          this.stitle=ob.stitle
          this.video=ob.video

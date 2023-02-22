@@ -17,6 +17,16 @@
 				</div>
 			</div>
 
+			<div class="ctn" *ngIf="choices === 'estimate'">
+				<div class="content-ctn" *ngFor="let item of estimate" >
+					<div id="questionSurvey" class="question">{{item.question}}</div>
+					<div class="action-buttons">
+						<button id="btnYes" (click)="nextQuestion('yes-form',false)">Yes</button>
+						<button id="btnNo" (click)="nextQuestion('no',false)">No</button>
+					</div>
+				</div>
+			</div>
+
 			<div class="ctn" *ngIf="choices === 'plans'">
 				<div class="content-ctn" *ngFor="let item of plans" >
 					<div id="questionSurvey" class="question">{{item.question}}</div>
@@ -71,7 +81,30 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="survey-form-client" id="formClientMobile">
+				<div class="form-content">
+					<div class="input">
+						<input type="text" placeholder="Full name"/>
+						<br>
+						<label>First name</label>
+					</div>
+					<div class="input">
+						<input type="text" placeholder="Email"/>
+						<br>
+						<label>Email</label>
+					</div>
+					<div class="input">
+						<input type="text" placeholder="Phone"/>
+						<br>
+						<label>Mobile</label>
+					</div>
+					<button (click)="finishFormClientMobile()" >send</button>
+				</div>
+			</div>
+
 		</div>
+
 		<button class="skip-btn" id="skipBtn" (click)="backFromSurvey()">Skip</button>
 </div>
 <div class="survey-container-CL" id="surveyCtnCL">
@@ -92,6 +125,18 @@
 				</div>
 				<div class="buttons" >
 					<button (click)="nextQuestionCL('yes')" >yes</button>
+					<button (click)="nextQuestionCL('no')" >no</button>
+				</div>
+				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
+			</div>
+
+			<div class="qst-ctn" *ngIf="choices === 'estimate'">
+				<div class="question" *ngFor="let item of estimate">
+					
+					<span> {{item.question}} </span>
+				</div>
+				<div class="buttons" >
+					<button (click)="nextQuestionCL('yes-form')" >yes</button>
 					<button (click)="nextQuestionCL('no')" >no</button>
 				</div>
 				<div class="skip-btn" (click)="surveyCLClose()">skip</div>
@@ -171,6 +216,26 @@
 		<div class="finished-survey" id="finishedSurvey">
 			<div class="text">Thank you!<br><br>your answers has been submited successfully</div>
 			<button (click)="surveyCLClose()" >Back</button>
+		</div>
+		<div class="survey-form-client" id="formClient">
+			<div class="form-content">
+				<div class="input">
+					<input type="text" placeholder="Full name"/>
+					<br>
+					<label>First name</label>
+				</div>
+				<div class="input">
+					<input type="text" placeholder="Email"/>
+					<br>
+					<label>Email</label>
+				</div>
+				<div class="input">
+					<input type="text" placeholder="Phone"/>
+					<br>
+					<label>Mobile</label>
+				</div>
+				<button (click)="finishFormClient()" >send</button>
+			</div>
 		</div>
 
 	</div>

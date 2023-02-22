@@ -8,9 +8,9 @@ background-size: cover ;background-attachment: fixed ;margin-bottom: 20px;">
         <div class="column" *ngFor="let item of crud.tabCarc">
           <div class="card">
             <div class="icon-wrapper">
-              <img src="assets/images/logo1.png" style="height:auto;width:auto;max-width: 60px;max-height: 60px;" alt="heart-of-carthage-dubai">
+              <img [src]="item.imageCarac" style="height:auto;width:auto;max-width: 60px;max-height: 60px;" alt="heart-of-carthage-dubai">
             </div>
-            <a>{{item}} </a>
+            <a>{{item.carc}} </a>
             
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CrudService } from 'src/app/services/crud.service';
 import { environment } from 'src/environments/environment';
 @Component({
@@ -11,7 +12,7 @@ export class DashComponent implements OnInit {
   affSp=false
   affiTab=false
   tab:any[]=[]
-  constructor(public crud:CrudService ,private ht:HttpClient ) { }
+  constructor(public crud:CrudService ,private ht:HttpClient ,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -46,5 +47,7 @@ export class DashComponent implements OnInit {
     this.affiTab=true
   })
   }
-
+  loginOut(){
+ this.route.navigate(['/login'])
+  }
 }

@@ -9,8 +9,8 @@
 
 </div>
 <!-- ***** Main Banner Area Start ***** -->
-<div class="main-bg-cover">
-<div class="bg-off-plan-lunding" style="background-image: url('/assets/images/2.png');"></div>
+<div class="main-bg-cover" *ngIf="!loadingOff">
+<div class="bg-off-plan-lunding"  [style.background-image]="'url('+ imageProfil + ')'"></div>
 <app-form1></app-form1>
 
 </div>
@@ -98,6 +98,9 @@
     </div>
 
 </div>
+<section   style="background: #f7f7f7!important;margin-top: 10%;margin-bottom: 10%;margin-left: 20%;margin-right: 20%;">
+  <app-home-azizi style="text-align:center ;"></app-home-azizi>
+</section>
 <section style="margin-top: 20px;">
     <app-carc></app-carc>
 </section>

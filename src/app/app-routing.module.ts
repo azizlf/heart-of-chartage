@@ -18,6 +18,7 @@ import { Form2Component } from './client/form2/form2.component';
 import { ProductOffPlanComponent } from './client/product-off-plan/product-off-plan.component';
 import { Home1Component } from './client/home1/home1.component';
 import { LoginComponent } from './admin/login/login.component';
+import { LundingPageAziziComponent } from './azizi/lunding-page-azizi/lunding-page-azizi.component';
 const routes: Routes = [
   { path:"", component:HomeComponent },
   { path:"about", component:AboutComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path:"offs", component:ProductOffPlanComponent },
   { path:"home1", component:Home1Component },
   { path:"login", component: LoginComponent },
+  { path:"Azizi", component: LundingPageAziziComponent },
 ];
 
 
