@@ -12,6 +12,7 @@ export class CustomHeaderComponent implements OnInit {
   element:any
 
   openSide(){
+    console.log(this.element)
     this.element = document.getElementById("sideBar")
     this.element.style.display = "flex"
   }
