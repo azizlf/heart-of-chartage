@@ -65,6 +65,7 @@ import { UpdateOffplanComponent } from './admin/update-offplan/update-offplan.co
 import { SurveyAppComponent } from './survey-app/survey-app.component';
 import { NotBoxArabeComponent } from './not-box-arabe/not-box-arabe.component';
 import { NotBoxEnglishComponent } from './not-box-english/not-box-english.component';
+import { CustomHeaderComponent } from './custom-header/custom-header.component';
 
 
 @NgModule({
@@ -107,7 +108,8 @@ declarations: [
     UpdateOffplanComponent,
     SurveyAppComponent,
     NotBoxArabeComponent,
-    NotBoxEnglishComponent
+    NotBoxEnglishComponent,
+    CustomHeaderComponent
   ],
   imports: [
     BrowserModule,
