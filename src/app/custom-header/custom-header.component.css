@@ -1491,33 +1491,35 @@ body{
 
 	.header-section-heart-of-chartage .content .search-container .search-content{
 
-		width: 80%;
-		height: 80%;
+		width: 92%;
+		height: 102%;
 		background-color: #26374f87;
 		display: block;
 		padding: 11% 6% 0 5%;
+		margin-top: 4%;
 
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.left .input .header-input .item-selected{
 
-		font-size: 2.7vw;
+		font-size: 4.7vw;
+		width: 88%;
 
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.left .input .header-input i{
 
-		font-size: 2.5vw;
+		font-size: 3.5vw;
 
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.left .flex-input .input .header-input .item-selected{
-		width: 85%;
+		width: 81%;
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header .input input{
 
-		font-size: 2.7vw;
+		font-size: 4.7vw;
 
 	}
 
@@ -1536,28 +1538,36 @@ body{
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.left .input .drop-input .item{
 
-		font-size: 2.8vw;
+		font-size: 4.8vw;
 
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.left .flex-input .input .drop-input .item{
 
-		font-size: 2.5vw;
+		font-size: 4.5vw;
 
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button{
 
-		font-size: 2.2vw;
+		font-size: 3.2vw;
+		width: 29%;
 
 	}
 
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button i{
+
+		font-size: 2.5vw;
+
+	}
+
+
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input .header-input .item-selected{
-		font-size: 2vw;
+		font-size: 3vw;
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input-search input{
-		font-size: 2.7vw;
+		font-size: 4vw;
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input .drop-input .item{
@@ -1565,12 +1575,17 @@ body{
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input.long-input .drop-input .item{
-		font-size: 2.6vw;
+		font-size: 3vw;
 	}
 
 	.header-section-heart-of-chartage .content .header .item{
 
 		font-size: 2.8vw;
+
+	}
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input.long-input .drop-input{
+
+		max-height: 400%;
 
 	}
 
