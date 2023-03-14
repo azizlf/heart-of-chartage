@@ -967,7 +967,7 @@ body{
 	.responsive-version .side-bar .content-side-bar .menu-list .item .list{
 
 		transition: 0.4s;
-		height: 0%;
+		height: 0px;
 		overflow: hidden;
 
 	}
@@ -991,7 +991,7 @@ body{
 
 	.responsive-version .side-bar .content-side-bar .menu-list .item input:focus ~ .list{
 
-		height: 37%;
+		height: 207px;
 
 	}
 
