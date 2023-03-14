@@ -118,7 +118,7 @@
 .nav-bar-on-scroll-event .menu-list .item:hover .drop-down-item{
 
 	transition: height .2s;
-	height: 263%;
+	height: 293%;
 
 }
 
@@ -152,7 +152,7 @@ body{
 .header-section-heart-of-chartage .content{
 
 	width: 100%;
-	height: 100%;
+	height: 670px;
 	background-color: #0000005e;
 
 }
@@ -305,7 +305,7 @@ body{
 .header-section-heart-of-chartage .content .nav-bar .menu-list .item:hover .drop-down-item{
 
 	transition: height .2s;
-	height: 42%;
+	height: 56%;
 
 }
 
@@ -808,7 +808,7 @@ body{
 	.header-section-heart-of-chartage .content .header .item{
 
 		color: white;
-		font-size: 2.8vw;
+		font-size: 1.8vw;
 		margin: 0 4%;
 		display: flex;
 		align-items: center;
@@ -851,7 +851,7 @@ body{
 	.header-section-heart-of-chartage .content .nav-bar .menu-btn{
 		width: 5%;
 		background: #26374f;
-		padding: 1.5% 0;
+		padding: 1.2% 0;
 		text-align: center;
 		margin-right: 7%;
 		color: white;
@@ -1027,7 +1027,7 @@ body{
 	.header-section-heart-of-chartage .content .search-container .search-content{
 
 		width: 80%;
-		height: 80%;
+		height: 103%;
 		background-color: #26374f87;
 		display: block;
 		padding: 4% 4% 3% 4%;
@@ -1524,7 +1524,7 @@ body{
 	.header-section-heart-of-chartage .content .nav-bar .menu-btn{
 
 		width: 8%;
-		padding: 2% 0;
+		padding: 1% 0;
 
 	}
 
@@ -1568,6 +1568,11 @@ body{
 		font-size: 2.6vw;
 	}
 
+	.header-section-heart-of-chartage .content .header .item{
+
+		font-size: 2.8vw;
+
+	}
 
 }
 
