@@ -12,15 +12,16 @@ export class CustomHeaderComponent implements OnInit {
   element:any
 
   openSide(){
-    this.element = document.querySelector("#sideBar")
+    this.element = document.getElementById("sideBar")
     this.element.style.display = "flex"
   }
 
   closeSide(){
-    this.element = document.querySelector("#closesideBar")
+    this.element = document.getElementById("sideBar")
     this.element.style.display = "none"
   }
 
+  navBarScroll:any
 
   ngOnInit(): void {
 
@@ -29,14 +30,14 @@ export class CustomHeaderComponent implements OnInit {
     window.addEventListener("scroll",()=>{
 
       if(window.scrollY > 70){
-        this.element = document.querySelector(".nav-bar-on-scroll-event")
-        this.element.style.opacity = "1"
-        this.element.style.top = "0%"
-        this.element.style.pointerEvents = "all"
+        this.navBarScroll = document.querySelector(".nav-bar-on-scroll-event")
+        this.navBarScroll.style.opacity = "1"
+        this.navBarScroll.style.top = "0%"
+        this.navBarScroll.style.pointerEvents = "all"
       }else{
-        this.element.style.opacity = "0"
-        this.element.style.top = "-100%"
-        this.element.style.pointerEvents = "none"
+        this.navBarScroll.style.opacity = "0"
+        this.navBarScroll.style.top = "-100%"
+        this.navBarScroll.style.pointerEvents = "none"
       }
 
     })
