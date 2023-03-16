@@ -1,6 +1,6 @@
 <div class="laptop-version">	
 	<div class="nav-bar-on-scroll-event">
-		<div class="logo">Provident</div>
+		<div class="logo"><img src="assets/images/logoHOCD.png" style="width: 20%;" alt="logo"></div>
 		<div class="menu-list">
 			<div class="item"><span>Buy</span><i class="fa-solid fa-angle-down"></i>
 				<div class="drop-down-item">
@@ -72,7 +72,7 @@
 				<div class="item end"><i class="fa-solid fa-blog"></i><span>Blog</span></div>
 			</div>
 			<div class="nav-bar">
-				<div class="logo">Provident</div>
+				<div class="logo"><img src="assets/images/logoHOCD.png" style="width: 20%;" alt="logo"></div>
 				<div class="menu-list">
 					<div class="item"><span>Buy</span><i class="fa-solid fa-angle-down"></i>
 						<div class="drop-down-item">
@@ -136,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="title">
+			<div class="title" >
 				Your One Stop Shop For Townhouses
 			</div>
 			<div class="search-container">
@@ -144,64 +144,42 @@
 					<div class="section left">
 						<div class="input">
 							<div class="header-input">
-								<div class="item-selected">Sale</div>
-								<input type="text" readonly>
+								<div class="item-selected">{{formSearch.saleRent}}</div>
+								<input type="text" readonly (click)="openCloseDrop(dropSale)">
 								<i class="fa-solid fa-angle-down"></i>
-								<div class="drop-input">
-									<div class="item">Sale</div>
-									<div class="item">Rent</div>
+								<div class="drop-input" #dropSale>
+									<div class="item" *ngFor="let item of searchAllDropList.sale" (click)="selectItem(dropSale,'saleRent',item)">{{item}}</div>
 								</div>
 							</div>
 						</div>
 						<div class="input">
 							<div class="header-input">
-								<div class="item-selected">Property Type</div>
-								<input type="text"  readonly>
+								<div class="item-selected">{{formSearch.propertyType}}</div>
+								<input type="text"  readonly (click)="openCloseDrop(dropProp)">
 								<i class="fa-solid fa-angle-down"></i>
-								<div class="drop-input">
-									<div class="item">Property Type</div>
-									<div class="item">Appartment</div>
-									<div class="item">Villa</div>
-									<div class="item">Townhouse</div>
-									<div class="item">Penthouse</div>
-									<div class="item">Office space</div>
-									<div class="item">Shop</div>
-									<div class="item">Retail</div>
-									<div class="item">Duplex</div>
-									<div class="item">Full Floor</div>
-									<div class="item">Hotel Appartment</div>
-									<div class="item">Half Floor</div>
+								<div class="drop-input" #dropProp>
+									<div class="item"*ngFor="let item of searchAllDropList.propertyType" (click)="selectItem(dropProp,'propertyType',item)">{{item}}</div>
 								</div>
 							</div>
 						</div>
 						<div class="flex-input">
 							<div class="input">
 								<div class="header-input">
-									<div class="item-selected">Min area</div>
-									<input type="text" readonly>
+									<div class="item-selected">{{formSearch.minArea}}</div>
+									<input type="text" readonly (click)="openCloseDrop(dropMinArea)">
 									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min area</div>
-										<div class="item">300 sqft</div>
-										<div class="item">500 sqft</div>
-										<div class="item">700 sqft</div>
-										<div class="item">800 sqft</div>
-										<div class="item">1.000 sqft</div>
+									<div class="drop-input" #dropMinArea>
+										<div class="item" *ngFor="let item of searchAllDropList.minArea" (click)="selectItem(dropMinArea,'minArea',item)">{{item}}</div>
 									</div>
 								</div>
 							</div>
 							<div class="input">
 								<div class="header-input">
-									<div class="item-selected">Max area</div>
-									<input type="text" readonly>
+									<div class="item-selected">{{formSearch.maxArea}}</div>
+									<input type="text" readonly (click)="openCloseDrop(dropMaxArea)">
 									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max area</div>
-										<div class="item">300 sqft</div>
-										<div class="item">500 sqft</div>
-										<div class="item">700 sqft</div>
-										<div class="item">800 sqft</div>
-										<div class="item">1.000 sqft</div>
+									<div class="drop-input" #dropMaxArea>
+										<div class="item" *ngFor="let item of searchAllDropList.maxArea" (click)="selectItem(dropMaxArea,'maxArea',item)">{{item}}</div>
 									</div>
 								</div>
 							</div>
@@ -213,84 +191,6 @@
 								<input type="text" placeholder="City / Community / Building">
 							</div>
 							<button><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
-						</div>
-						<div class="inputs">
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Min price</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min price</div>
-										<div class="item">300,000 AED</div>
-										<div class="item">400,000 AED</div>
-										<div class="item">500,000 AED</div>
-										<div class="item">600,000 AED</div>
-										<div class="item">700,000 AED</div>
-										<div class="item">800,000 AED</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Max price</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max price</div>
-										<div class="item">300,000 AED</div>
-										<div class="item">400,000 AED</div>
-										<div class="item">500,000 AED</div>
-										<div class="item">600,000 AED</div>
-										<div class="item">700,000 AED</div>
-										<div class="item">800,000 AED</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Min bed</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min bed</div>
-										<div class="item">Studio</div>
-										<div class="item">1 Bedroom</div>
-										<div class="item">2 Bedroom</div>
-										<div class="item">3 Bedroom</div>
-										<div class="item">4 Bedroom</div>
-										<div class="item">5 Bedroom</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Max bed</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max bed</div>
-										<div class="item">Studio</div>
-										<div class="item">1 Bedroom</div>
-										<div class="item">2 Bedroom</div>
-										<div class="item">3 Bedroom</div>
-										<div class="item">4 Bedroom</div>
-										<div class="item">5 Bedroom</div>
-									</div>
-								</div>
-							</div>
-							<div class="input long-input">
-								<div class="header-input">
-									<div class="item-selected">Completion status</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Completion status</div>
-										<div class="item">Ready</div>
-										<div class="item">Offplan</div>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="input-search">
 							<input type="text" placeholder="Amenities" />
@@ -388,7 +288,7 @@
 				<div class="item end"><i class="fa-solid fa-blog"></i><span>Blog</span></div>
 			</div>
 			<div class="nav-bar">
-				<div class="logo">Provident</div>
+				<div class="logo"><img src="assets/images/logoHOCD.png" style="width: 20%;" alt="logo"></div>
 				<div class="menu-btn" (click)="openSide()" ><i class="fa-solid fa-bars"></i></div>
 			</div>
 
@@ -397,64 +297,42 @@
 					<div class="section left">
 						<div class="input">
 							<div class="header-input">
-								<div class="item-selected">Sale</div>
-								<input type="text" readonly>
+								<div class="item-selected">{{formSearch.saleRent}}</div>
+								<input type="text" readonly (click)="openCloseDrop(dropSaleMb)">
 								<i class="fa-solid fa-angle-down"></i>
-								<div class="drop-input">
-									<div class="item">Sale</div>
-									<div class="item">Rent</div>
+								<div class="drop-input" #dropSaleMb>
+									<div class="item" *ngFor="let item of searchAllDropList.sale" (click)="selectItem(dropSaleMb,'saleRent',item)">{{item}}</div>
 								</div>
 							</div>
 						</div>
 						<div class="input">
 							<div class="header-input">
-								<div class="item-selected">Property Type</div>
-								<input type="text"  readonly>
+								<div class="item-selected">{{formSearch.propertyType}}</div>
+								<input type="text"  readonly (click)="openCloseDrop(dropPropMb)">
 								<i class="fa-solid fa-angle-down"></i>
-								<div class="drop-input">
-									<div class="item">Property Type</div>
-									<div class="item">Appartment</div>
-									<div class="item">Villa</div>
-									<div class="item">Townhouse</div>
-									<div class="item">Penthouse</div>
-									<div class="item">Office space</div>
-									<div class="item">Shop</div>
-									<div class="item">Retail</div>
-									<div class="item">Duplex</div>
-									<div class="item">Full Floor</div>
-									<div class="item">Hotel Appartment</div>
-									<div class="item">Half Floor</div>
+								<div class="drop-input" #dropPropMb>
+									<div class="item"*ngFor="let item of searchAllDropList.propertyType" (click)="selectItem(dropPropMb,'propertyType',item)">{{item}}</div>
 								</div>
 							</div>
 						</div>
 						<div class="flex-input">
 							<div class="input">
 								<div class="header-input">
-									<div class="item-selected">Min area</div>
-									<input type="text" readonly>
+									<div class="item-selected">{{formSearch.minArea}}</div>
+									<input type="text" readonly (click)="openCloseDrop(dropMinAreaMb)">
 									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min area</div>
-										<div class="item">300 sqft</div>
-										<div class="item">500 sqft</div>
-										<div class="item">700 sqft</div>
-										<div class="item">800 sqft</div>
-										<div class="item">1.000 sqft</div>
+									<div class="drop-input" #dropMinAreaMb>
+										<div class="item" *ngFor="let item of searchAllDropList.minArea" (click)="selectItem(dropMinAreaMb,'minArea',item)">{{item}}</div>
 									</div>
 								</div>
 							</div>
 							<div class="input">
 								<div class="header-input">
-									<div class="item-selected">Max area</div>
-									<input type="text" readonly>
+									<div class="item-selected">{{formSearch.maxArea}}</div>
+									<input type="text" readonly (click)="openCloseDrop(dropMaxAreaMb)">
 									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max area</div>
-										<div class="item">300 sqft</div>
-										<div class="item">500 sqft</div>
-										<div class="item">700 sqft</div>
-										<div class="item">800 sqft</div>
-										<div class="item">1.000 sqft</div>
+									<div class="drop-input" #dropMaxAreaMb>
+										<div class="item" *ngFor="let item of searchAllDropList.maxArea" (click)="selectItem(dropMaxAreaMb,'maxArea',item)">{{item}}</div>
 									</div>
 								</div>
 							</div>
@@ -466,84 +344,6 @@
 								<input type="text" placeholder="City / Community / Building">
 							</div>
 							<button><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
-						</div>
-						<div class="inputs">
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Min price</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min price</div>
-										<div class="item">300,000 AED</div>
-										<div class="item">400,000 AED</div>
-										<div class="item">500,000 AED</div>
-										<div class="item">600,000 AED</div>
-										<div class="item">700,000 AED</div>
-										<div class="item">800,000 AED</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Max price</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max price</div>
-										<div class="item">300,000 AED</div>
-										<div class="item">400,000 AED</div>
-										<div class="item">500,000 AED</div>
-										<div class="item">600,000 AED</div>
-										<div class="item">700,000 AED</div>
-										<div class="item">800,000 AED</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Min bed</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Min bed</div>
-										<div class="item">Studio</div>
-										<div class="item">1 Bedroom</div>
-										<div class="item">2 Bedroom</div>
-										<div class="item">3 Bedroom</div>
-										<div class="item">4 Bedroom</div>
-										<div class="item">5 Bedroom</div>
-									</div>
-								</div>
-							</div>
-							<div class="input">
-								<div class="header-input">
-									<div class="item-selected">Max bed</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Max bed</div>
-										<div class="item">Studio</div>
-										<div class="item">1 Bedroom</div>
-										<div class="item">2 Bedroom</div>
-										<div class="item">3 Bedroom</div>
-										<div class="item">4 Bedroom</div>
-										<div class="item">5 Bedroom</div>
-									</div>
-								</div>
-							</div>
-							<div class="input long-input">
-								<div class="header-input">
-									<div class="item-selected">Completion status</div>
-									<input type="text" readonly>
-									<i class="fa-solid fa-angle-down"></i>
-									<div class="drop-input">
-										<div class="item">Completion status</div>
-										<div class="item">Ready</div>
-										<div class="item">Offplan</div>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="input-search">
 							<input type="text" placeholder="Amenities" />

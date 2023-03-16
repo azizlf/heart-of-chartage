@@ -66,6 +66,7 @@ import { SurveyAppComponent } from './survey-app/survey-app.component';
 import { NotBoxArabeComponent } from './not-box-arabe/not-box-arabe.component';
 import { NotBoxEnglishComponent } from './not-box-english/not-box-english.component';
 import { CustomHeaderComponent } from './custom-header/custom-header.component';
+import { CustomNavBarComponent } from './custom-nav-bar/custom-nav-bar.component';
 
 
 @NgModule({
@@ -109,7 +110,8 @@ declarations: [
     SurveyAppComponent,
     NotBoxArabeComponent,
     NotBoxEnglishComponent,
-    CustomHeaderComponent
+    CustomHeaderComponent,
+    CustomNavBarComponent
   ],
   imports: [
     BrowserModule,

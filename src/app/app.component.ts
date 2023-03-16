@@ -4,6 +4,9 @@ import { HttpClient ,HttpHeaders} from '@angular/common/http';
 //import { SeoService } from './services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
 import { CrudService } from './services/crud.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,11 +16,26 @@ export class AppComponent {
   title = 'Heart Of Carthage Real Estate Dubai';
   message:any
   public phone = "+971 58 218 9263"
- public messg = "ارسل الآن طلبك";
-  constructor(private  messagingService:MessagingService ,private http:HttpClient,private meta:Meta ,public crud:CrudService ){
+  public messg = "ارسل الآن طلبك";
+  constructor(private router:Router , private  messagingService:MessagingService ,private http:HttpClient,private meta:Meta ,public crud:CrudService ){
 
   }
+
+  customNavBar:any
+
   ngOnInit() {
+
+
+    if(!(window.location.pathname === "/")){
+
+      this.crud.isCustomNavBar = true
+
+    }else{
+      this.crud.isCustomNavBar = false
+    }
+
+    this.customNavBar = this.crud.isCustomNavBar
+
     this.meta.addTags([
       {
         name: 'keywords',

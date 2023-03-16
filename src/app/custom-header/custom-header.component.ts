@@ -11,6 +11,50 @@ export class CustomHeaderComponent implements OnInit {
 
   element:any
 
+  searchAllDropList = {
+    sale:["Sale","Rent"],
+    propertyType:["Property Type","Appartment","Villa","Townhouse","Penthouse","Office space","Shop"],
+    minArea:["Min area","300 sqft","500 sqft","700 sqft","800 sqft","1000 sqft"],
+    maxArea:["Max area","300 sqft","500 sqft","700 sqft","800 sqft","1000 sqft"]
+  }
+
+  formSearch = {
+    saleRent:"Sale",
+    propertyType:"Property Type",
+    minArea:"Min area",
+    maxArea:"Max area"
+  }
+
+  selectItem(dp:any,key:any,value:any){
+
+    this.formSearch[key] = value
+
+    console.log(value)
+    console.log(this.formSearch[key])
+
+    this.openCloseDrop(dp)
+
+  }
+
+  dropOpen = false
+
+  openCloseDrop(drop:any){
+
+    if(this.dropOpen){
+
+      drop.style.display = "none"
+      this.dropOpen = false
+
+    }
+    else{
+
+      drop.style.display = "block"
+      this.dropOpen = true
+
+    }
+
+  }
+
   openSide(){
     this.element = document.getElementById("sideBar")
     this.element.style.display = "flex"
@@ -24,8 +68,6 @@ export class CustomHeaderComponent implements OnInit {
   navBarScroll:any
 
   ngOnInit(): void {
-
-
 
     window.addEventListener("scroll",()=>{
 

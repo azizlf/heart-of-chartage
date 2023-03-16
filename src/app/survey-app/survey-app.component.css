@@ -10,6 +10,7 @@
 	background-color: #0000006e;
 	perspective: 10000px;
 	animation: surveyContainerAnim .6s;
+	top: 0;
 }
 
 @keyframes surveyContainerAnim{

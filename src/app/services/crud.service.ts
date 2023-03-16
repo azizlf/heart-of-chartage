@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CrudService {
+  
+  isCustomNavBar = false
+
 //affiche Global
 public  lat: number = 51.673858;
   public lng: number = 7.815982;
