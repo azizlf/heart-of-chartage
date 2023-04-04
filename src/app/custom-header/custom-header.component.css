@@ -1204,7 +1204,7 @@ body{
 	}
 
 
-	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button{
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right button{
 
 		width: 100%;
 		padding: 4% 0;
@@ -1236,13 +1236,13 @@ body{
 	}
 
 
-	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button:hover{
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right  button:hover{
 
 		background-color: #26374f;
 
 	}
 
-	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button:hover i{
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right button:hover i{
 
 		margin-right: 2%;
 
@@ -1250,7 +1250,7 @@ body{
 
 
 
-	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button i{
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right button i{
 
 		font-size: 1.5vw;
 		margin-right: 3%;
