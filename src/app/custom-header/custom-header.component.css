@@ -524,8 +524,7 @@ body{
 	background-color: #f37233;
 	border: none;
 	outline: none;
-	border-top-right-radius: .3vw;
-	border-bottom-right-radius: .3vw;
+	border-radius: .3vw;
 	cursor: pointer;
 	font-size: 1.2vw;
 	color: white;
@@ -543,7 +542,9 @@ body{
 	font-size: 1vw;
 
 }
-
+.header-section-heart-of-chartage .content .search-container .search-content .section.right button i{
+	transition: .4s;
+}
 
 .header-section-heart-of-chartage .content .search-container .search-content .section.right button:hover{
 
@@ -552,7 +553,7 @@ body{
 }
 .header-section-heart-of-chartage .content .search-container .search-content .section.right button:hover i{
 
-	margin-right: 10%;
+	margin-right: 2%;
 
 }
 
@@ -1211,14 +1212,17 @@ body{
 		background-color: #f37233;
 		border: none;
 		outline: none;
-		border-top-right-radius: 0.3vw;
-		border-bottom-right-radius: 0.3vw;
+		border-radius: .3vw;
 		cursor: pointer;
 		font-size: 16px;
 		color: #fff;
 		text-transform: uppercase;
 		transition: .4s;
 
+	}
+
+	.header-section-heart-of-chartage .content .search-container .search-content .section.right button i{
+		transition: .4s;
 	}
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .input .header-input .item-selected{
@@ -1240,7 +1244,7 @@ body{
 
 	.header-section-heart-of-chartage .content .search-container .search-content .section.right .search-header button:hover i{
 
-		margin-right: 10%;
+		margin-right: 2%;
 
 	}
 
